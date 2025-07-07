@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package schemaVersion="1.6" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>ARM</vendor>
+  <name>mlek-examples-pack</name>
+  <description>FlatBuffers: Memory Efficient Serialization Library</description>
+  <!-- web download link -->
+  <url>https://vendor.com/packs/mlek-examples-pack/</url>
+  <license>LICENSE.txt</license>
+
+  <releases>
+    <release version="0.0.3">
+      Initial Draft 
+    </release>
+  </releases>
+
+  <examples>
+    <example name="MLEK Keyword Spotting and Audio User Algorithm Template" folder="examples/audio" doc="README.md">
+      <description></description>
+      <project>
+        <environment name="csolution" load="mlek_audio.csolution.yml"/>
+      </project>
+      <attributes>
+        <component Cclass="Machine Learning"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="MLEK Object Detection and Video User Algorithm Template" folder="examples/video" doc="README.md">
+      <description></description>
+      <project>
+        <environment name="csolution" load="mlek_video.csolution.yml"/>
+      </project>
+      <attributes>
+        <component Cclass="Machine Learning"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+  <!-- example name="MLEK Generic Inference Runnner" folder="examples/generic" doc="README.md">
+      <description></description>
+      <project>
+        <environment name="csolution" load="mlek_generic.csolution.yml"/>
+      </project>
+      <attributes>
+        <component Cclass="Machine Learning"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example -->
+
+  </examples>
+
+</package>

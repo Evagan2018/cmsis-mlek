@@ -1,0 +1,5 @@
+{
+    "clangd.arguments": [
+        "--compile-commands-dir=/Users/mather01/Documents/Linux/Ethos_PMU/test_models/mlek-examples-pack/examples/out/object-detection/AVH-SSE-300/Debug-Live_Stream"
+    ]
+}

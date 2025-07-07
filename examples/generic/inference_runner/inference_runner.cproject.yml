@@ -1,0 +1,115 @@
+#  SPDX-FileCopyrightText: Copyright 2022-2025 Arm Limited and/or its
+#  affiliates <open-source-office@arm.com>
+#  SPDX-License-Identifier: Apache-2.0
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+project:
+  packs:
+    - pack: ARM::CMSIS@^6.2.0-0
+    - pack: ARM::CMSIS-DSP@1.16.0
+    - pack: ARM::CMSIS-NN@7.0.0
+    - pack: ARM::CMSIS-RTX@5.9.0
+
+    - pack: ARM::ethos-u-core-driver@1.25.2
+
+    - pack: ARM::ml-embedded-eval-kit-uc-api@24.8.0
+
+    - pack: tensorflow::flatbuffers@1.25.2
+    - pack: tensorflow::gemmlowp@1.25.2
+    - pack: tensorflow::kissfft@1.25.2
+    - pack: tensorflow::ruy@1.25.2
+    - pack: tensorflow::tensorflow-lite-micro@1.25.2
+
+  output:
+    type:
+      - elf
+      - bin
+      - map
+      - hex
+
+  connections:
+    - connect: Board Layer with serial character interface
+      consumes:
+        - STDOUT
+      provides:
+        - CMSIS-RTOS2
+
+  define:
+    - ACTIVATION_BUF_SZ: 128000
+
+  add-path:
+    - ./include/
+    - ./profiler/include/
+    - ./profiler/npu/include/
+
+  groups:
+    - group: Application Main
+      files:
+        - file: src/MainLoop.cpp
+
+    - group: Inference Runner Source
+      files:
+        - file: src/UseCaseHandler.cpp
+        - file: src/UseCaseCommonUtils.cpp
+
+    - group: Tensorflow model
+      files:
+        - file: Model/dnn_s_quantized_vela_Z256.tflite.cpp
+          for-context: \.*-TestModel
+        - file: Model/user_model.cpp
+          for-context: \.*-UserModel
+
+    
+    - group: Profiler Source
+      files:
+        - file: profiler/Profiler.cpp
+        - file: profiler/hal_pmu.c
+        - file: profiler/timer_cmsis_rtos.c
+        - file: profiler/npu/ethosu_profiler.c
+        - file: profiler/npu/ethosu_cpu_cache.c
+
+      define: 
+          - ARM_NPU
+ 
+    - group: Configuration
+      files:
+        - file: config/AppConfiguration.hpp
+
+  components:
+    - component: CMSIS:DSP&Source
+    - component: CMSIS:NN Lib
+    - component: CMSIS:OS Tick:SysTick
+    - component: CMSIS:RTOS2:Keil RTX5&Source
+
+    - component: Data Exchange:Serialization:flatbuffers&tensorflow
+    - component: Data Processing:Math:gemmlowp fixed-point&tensorflow
+    - component: Data Processing:Math:kissfft&tensorflow
+    - component: Data Processing:Math:ruy&tensorflow
+
+
+    # TensorFlow Kernel variant for devices with Ethos-U
+    - component: Machine Learning:TensorFlow:Kernel&Ethos-U
+
+
+    - component: Machine Learning:TensorFlow:Kernel Utils
+    - component: Machine Learning:TensorFlow:Testing
+
+    - component: ML Eval Kit:Common:API
+    - component: ML Eval Kit:Common:Log
+    - component: ML Eval Kit:Common:Math
+    - component: ML Eval Kit:Generic:Inference runner
+
+  layers:
+    - layer: $Board-Layer$
+      type: Board
