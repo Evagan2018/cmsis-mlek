@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package schemaVersion="1.7.40" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.40/schema/PACK.xsd">
   <vendor>ARM</vendor>
-  <name>mlek-examples-pack</name>
-  <description>FlatBuffers: Memory Efficient Serialization Library</description>
+  <name>cmsis-mlek</name>
+  <description>MLEK Templates and Examples package for CMSIS workflows</description>
   <!-- web download link -->
-  <url>https://vendor.com/packs/mlek-examples-pack/</url>
+  <url>https://</url>
   <license>LICENSE</license>
 
   <releases>
-    <release version="0.0.3">
+    <release version="0.1.0">
       Initial Draft 
     </release>
   </releases>
