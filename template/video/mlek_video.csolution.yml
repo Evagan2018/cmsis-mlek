@@ -21,10 +21,10 @@ solution:
   compiler: AC6
 
   packs:
-    - pack: ARM::V2M_MPS3_SSE_300_BSP@1.5.0
-    - pack: ARM::V2M_MPS3_SSE_310_BSP@1.4.0
-    - pack: ARM::SSE_315_BSP@1.0.0
-    - pack: ARM::SSE_320_BSP@1.0.0
+    - pack: ARM::V2M_MPS3_SSE_300_BSP@^1.5.0
+    - pack: ARM::V2M_MPS3_SSE_310_BSP@^1.4.0
+    - pack: ARM::SSE_315_BSP@^1.0.0
+    - pack: ARM::SSE_320_BSP@^1.0.0
 
   build-types:
     - type: Debug-Live_Stream
@@ -40,6 +40,14 @@ solution:
       optimize: debug
 
     - type: Release-Data_Array
+      debug: off
+      optimize: speed
+
+    - type: Debug-User_Algorithm
+      debug: on
+      optimize: debug
+
+    - type: Release-User_Algorithm
       debug: off
       optimize: speed
 
@@ -199,8 +207,10 @@ solution:
             config: ./board/Corstone-320/fvp_config.txt
             args:
               - -C mps3_board.v_path=./board/Corstone-320/vsi/python/
-
+              
   projects:
+    # Object Detection use case
+    - project: ./object-detection/object-detection.cproject.yml
+    # User algorithm template
+    - project: ./user-algorithm-template/user-algorithm-template.cproject.yml
 
-    # Keyword Spotting (KWS) use case
-    - project: ./kws/kws.cproject.yml

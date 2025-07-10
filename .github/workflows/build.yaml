@@ -1,0 +1,41 @@
+name: Build documentation and pack
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [published]
+jobs:
+  pack:
+    name: Generate pack
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch tags
+        if: ${{ github.event_name == 'release' }}
+        run: |
+          git fetch --tags --force
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+
+      - name: Install MkDocs
+        run: |
+          pip install mkdocs
+          pip install mkdocs-mermaid2-plugin
+          pip install mkdoxy
+
+      - uses: Open-CMSIS-Pack/gen-pack-action@main
+        with:
+
+          doxygen-version: 1.13.2 
+          packchk-version: 1.4.3
+          gen-pack-script: ./gen_pack.sh
+          gen-pack-output: ./output
+          gen-doc-script: ./documentation/gen_doc.sh
+          doc-path: ./docs
