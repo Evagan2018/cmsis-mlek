@@ -14,7 +14,7 @@
   </releases>
 
   <examples>
-    <example name="MLEK Keyword Spotting and Audio User Algorithm Template" folder="examples/audio" doc="README.md">
+    <example name="MLEK Keyword Spotting and Audio User Algorithm Template" folder="template/audio" doc="README.md">
       <description></description>
       <project>
         <environment name="csolution" load="mlek_audio.csolution.yml"/>
@@ -25,7 +25,7 @@
       </attributes>
     </example>
 
-    <example name="MLEK Object Detection and Video User Algorithm Template" folder="examples/video" doc="README.md">
+    <example name="MLEK Object Detection and Video User Algorithm Template" folder="template/video" doc="README.md">
       <description></description>
       <project>
         <environment name="csolution" load="mlek_video.csolution.yml"/>
@@ -36,7 +36,7 @@
       </attributes>
     </example>
 
-  <!-- example name="MLEK Generic Inference Runnner" folder="examples/generic" doc="README.md">
+  <!-- example name="MLEK Generic Inference Runnner" folder="template/generic" doc="README.md">
       <description></description>
       <project>
         <environment name="csolution" load="mlek_generic.csolution.yml"/>
