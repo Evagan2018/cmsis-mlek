@@ -55,3 +55,4 @@ dkms.conf
 *.dwo
 .DS_Store
 examples/audio/kws/.clangd
+template/audio/mlek_audio.cbuild-set.yml
