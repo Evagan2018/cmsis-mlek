@@ -54,10 +54,11 @@ The templates support multiple Arm Cortex-M platforms:
 
 | Platform | Processor | NPU Options | Description |
 |----------|-----------|-------------|-------------|
-| Corstone-300 | Cortex-M55 | Ethos-U55, Ethos-U65 | Baseline ML performance platform |
-| Corstone-310 | Cortex-M85 | Ethos-U55, Ethos-U65 | Enhanced processing capabilities |
-| Corstone-315 | Cortex-M85 | Ethos-U65 | Advanced ML acceleration |
-| Corstone-320 | Cortex-M85 | Ethos-U85 | Next-generation ML performance |
+| Corstone-300 | Cortex-M55 | Ethos-U55, Ethos-U65 | Arm Virtual Hardware |
+| Corstone-310 | Cortex-M85 | Ethos-U55, Ethos-U65 | Arm Virtual Hardware |
+| Corstone-315 | Cortex-M85 | Ethos-U65 | Arm Virtual Hardware |
+| Corstone-320 | Cortex-M85 | Ethos-U85 | Arm Virtual Hardware|
+| Any          | All Cortex-M | Ethos-U or CPU-only | Via CMSIS [Reference Applications](https://open-cmsis-pack.github.io/cmsis-toolbox/ReferenceApplications/) API |
 
 ## Links
 
