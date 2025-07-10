@@ -32,6 +32,7 @@ jobs:
 
       - uses: Open-CMSIS-Pack/gen-pack-action@main
         with:
+
           doxygen-version: 1.13.2 
           packchk-version: 1.4.3
           gen-pack-script: ./gen_pack.sh
