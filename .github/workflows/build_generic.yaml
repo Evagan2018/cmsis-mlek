@@ -119,6 +119,6 @@ jobs:
     - name: AC6-Build-Test 4 context ${{matrix.context.proj}}.${{matrix.context.type}}+${{matrix.context.board}}
       working-directory: ./template/generic
       run: |
-        inference_runner.csolution.yml --update-rte --packs --no-schema-check \
+        mlek_generic.csolution.yml --update-rte --packs --no-schema-check \
         --context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}} \
         --toolchain AC6 --rebuild
