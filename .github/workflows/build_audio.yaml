@@ -16,6 +16,7 @@
 
 name: mlek audio build and execution test
 on:
+
   workflow_dispatch:
   pull_request:
     branches: [main]
@@ -90,20 +91,6 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v4
 
-    - name: Build directory structure for ci tests
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        mkdir ci_tests
-        mkdir artifacts
-        cd artifacts
-        runID=$(gh run list -R https://github.com/Evagan2018/cmsis-mlek --workflow build.yaml --branch main --status success --limit 1 --json databaseId -q ".[].databaseId")
-        echo Show the run-id $runID
-        gh run download $runID -n pack -R https://github.com/Evagan2018/cmsis-mlek
-        unzip *.pack -d ./../ci_tests
-        rm -f *
-        unset runID
-
     - name: Install tools
       uses: ARM-software/cmsis-actions/vcpkg@v1
       with:
@@ -125,7 +112,7 @@ jobs:
 
 
     - name: AC6-Build-Test 4 context ${{matrix.context.proj}}.${{matrix.context.type}}+${{matrix.context.board}}
-      working-directory: ./ci_tests/template/audio
+      working-directory: ./template/audio
       run: |
         cbuild mlek_audio.csolution.yml --update-rte --packs  --no-schema-check \
         --context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}} \
