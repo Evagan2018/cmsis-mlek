@@ -97,7 +97,7 @@ solution:
             model: FVP_Corstone_SSE-300_Ethos-U65
             config: ./board/Corstone-300/fvp_config.txt
             args:
-              - -C mps3_board.v_path=./board/Corstone-300/vsi/python/      
+              - -C mps3_board.v_path=./board/Corstone-300/vsi/python/
 
     # Arm Corstone-310 targets
     - type: AVH-SSE-310
