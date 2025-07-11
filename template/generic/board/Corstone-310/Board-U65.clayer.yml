@@ -27,7 +27,7 @@ layer:
     - component: ARM::Device:Native Driver:SysCounter
     - component: ARM::Device:Native Driver:SysTimer
 
-    - component: Arm::Machine Learning:NPU Support:Ethos-U Driver&Generic U65
+    - component: ARM::Machine Learning:NPU Support:Ethos-U Driver&Generic U65
 
   groups:
     - group: Board

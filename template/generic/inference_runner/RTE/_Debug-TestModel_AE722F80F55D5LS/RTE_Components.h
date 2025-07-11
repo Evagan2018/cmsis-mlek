@@ -70,7 +70,7 @@
 #define RTE_Drivers_MIPI_DSI               /* Driver MIPI DSI */
 /* AlifSemiconductor::Device:SOC Peripherals:PINCONF@2.0.0 */
 #define RTE_Drivers_LL_PINCONF              /* Driver PinPAD and PinMux */
-/* Arm::Machine Learning:NPU Support:Ethos-U Driver&Generic U55@1.25.2 */
+/* ARM::Machine Learning:NPU Support:Ethos-U Driver&Generic U55@1.25.2 */
 #define RTE_ETHOS_U_CORE_DRIVER
 /* tensorflow::Data Exchange:Serialization:flatbuffers&tensorflow@1.25.2 */
 #define RTE_DataExchange_Serialization_flatbuffers     /* flatbuffers */

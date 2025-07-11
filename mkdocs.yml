@@ -8,7 +8,7 @@ nav:
 
 plugins:
     - search
-    - mermaid2    # pip install mkdocs-mermaid2-plugin
+   # - mermaid2    # pip install mkdocs-mermaid2-plugin
 
 theme:
   name: readthedocs
