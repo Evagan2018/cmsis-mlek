@@ -212,5 +212,5 @@ solution:
     # Object Detection use case
     - project: ./object-detection/object-detection.cproject.yml
     # User algorithm template
-    - project: ./user-algorithm-template/user-algorithm-template.cproject.yml
+    # - project: ./user-algorithm-template/user-algorithm-template.cproject.yml
 
