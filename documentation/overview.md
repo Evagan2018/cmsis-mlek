@@ -55,28 +55,19 @@ The generic templates provide a flexible foundation for any ML model:
 
 The MLEK templates support multiple Arm Cortex-M platforms with Ethos-U NPU acceleration:
 
-| Platform | Processor | NPU | Key Features |
-|----------|-----------|-----|--------------|
-| **Corstone-300** | Cortex-M55 | Ethos-U55/U65 | Baseline ML performance, power efficiency |
-| **Corstone-310** | Cortex-M85 | Ethos-U55/U65 | Enhanced processing, improved ML performance |
-| **Corstone-315** | Cortex-M85 | Ethos-U65 | Advanced ML capabilities, higher throughput |
-| **Corstone-320** | Cortex-M85 | Ethos-U85 | Next-generation ML acceleration |
+| Platform | Processor | NPU | 
+|----------|-----------|-----|
+| **Corstone-300** | Cortex-M55 | Ethos-U55 |
+| **Corstone-310** | Cortex-M85 | Ethos-U55 or U65 | 
+| **Corstone-315** | Cortex-M85 | Ethos-U65 | 
+| **Corstone-320** | Cortex-M85 | Ethos-U85 | 
 
 Each template can be configured to run on:
 
 - **Arm Virtual Hardware (AVH)**: For simulation, CI/CD, and early development
 - **Physical Evaluation Boards**: For hardware validation and real-world testing
-- **Custom Hardware**: With appropriate board support packages
+- **Custom Hardware**: By implementing the required interfaces 
 
-## Development Workflow
+## Virtual Interfaces
 
-![MLEK Development Workflow](images/MLEK-Workflow.png)
-
-The MLEK templates support a modern ML development workflow:
-
-1. **Model Development**: Train and optimize ML models using standard ML frameworks
-2. **Model Conversion**: Convert models to TensorFlow Lite format with quantization
-3. **Template Integration**: Deploy models into MLEK templates with minimal code changes
-4. **Simulation Testing**: Validate functionality using Arm Virtual Hardware
-5. **Hardware Deployment**: Deploy to target hardware for real-world validation
-6. **Performance Optimization**: Profile and optimize for target constraints
+VIO / VStream etc... 
