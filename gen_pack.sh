@@ -81,7 +81,7 @@ function preprocess() {
   echo "Changing working directory to $(pwd)"
 
   echo "Executing ./gen_doc.sh"
-  ./gen_doc.sh
+  ./documentation/gen_doc.sh
 
   popd > /dev/null
   echo "Changing working directory to $(pwd)"
