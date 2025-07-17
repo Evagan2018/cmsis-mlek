@@ -29,7 +29,8 @@ PACK_BUILD=./build
 # Default: empty (all folders)
 #
 PACK_DIRS="
-  examples
+  docs
+  template
 "
 
 # Specify file names to be added to pack base directory
