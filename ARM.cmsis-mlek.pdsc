@@ -14,7 +14,7 @@
   </releases>
 
   <examples>
-    <example name="MLEK Keyword Spotting and Audio User Algorithm Template" folder="template/audio">
+    <example name="MLEK Keyword Spotting and Audio User Algorithm Template" folder="template/audio" doc="README.md">
       <description></description>
       <project>
         <environment name="csolution" load="mlek_audio.csolution.yml"/>
@@ -25,7 +25,7 @@
       </attributes>
     </example>
 
-    <example name="MLEK Object Detection and Video User Algorithm Template" folder="template/video">
+    <example name="MLEK Object Detection and Video User Algorithm Template" folder="template/video" doc="README.md">
       <description></description>
       <project>
         <environment name="csolution" load="mlek_video.csolution.yml"/>
