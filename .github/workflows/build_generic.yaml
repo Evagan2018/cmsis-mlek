@@ -1,0 +1,122 @@
+# SPDX-FileCopyrightText: Copyright 2022-2025 Arm Limited and/or its
+# affiliates <open-source-office@arm.com>
+# SPDX-License-Identifier: Apache-2.0
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+name: mlek generic build and execution test
+on:
+
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  schedule:
+    - cron: '00 20 * * 6'
+
+
+jobs:
+  CI:
+    strategy:
+      matrix:
+        context: [
+          {proj: inference_runner,   build_type: Release-UserModel,   target_type: AE722F80F55D5LS,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AE722F80F55D5LS,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          {proj: inference_runner,   build_type: Release-TestModel,   target_type: AE722F80F55D5LS,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AE722F80F55D5LS,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+
+          {proj: inference_runner,   build_type: Release-UserModel,   target_type: AVH-SSE-300,       model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AVH-SSE-300,       model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          {proj: inference_runner,   build_type: Release-TestModel,   target_type: AVH-SSE-300,       model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AVH-SSE-300,       model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+
+          {proj: inference_runner,   build_type: Release-UserModel,   target_type: AVH-SSE-300-U55,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AVH-SSE-300-U55,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          {proj: inference_runner,   build_type: Release-TestModel,   target_type: AVH-SSE-300-U55,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AVH-SSE-300-U55,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+
+          {proj: inference_runner,   build_type: Release-UserModel,   target_type: AVH-SSE-300-U65,   model: FVP_Corstone_SSE-300_Ethos-U65,    fvp_dir: Corstone-300, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AVH-SSE-300-U65,   model: FVP_Corstone_SSE-300_Ethos-U65,    fvp_dir: Corstone-300, mps: mps3},
+          {proj: inference_runner,   build_type: Release-TestModel,   target_type: AVH-SSE-300-U65,   model: FVP_Corstone_SSE-300_Ethos-U65,    fvp_dir: Corstone-300, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AVH-SSE-300-U65,   model: FVP_Corstone_SSE-300_Ethos-U65,    fvp_dir: Corstone-300, mps: mps3},
+
+          {proj: inference_runner,   build_type: Release-UserModel,   target_type: AVH-SSE-310,       model: FVP_Corstone_SSE-310,              fvp_dir: Corstone-310, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AVH-SSE-310,       model: FVP_Corstone_SSE-310,              fvp_dir: Corstone-310, mps: mps3},
+          {proj: inference_runner,   build_type: Release-TestModel,   target_type: AVH-SSE-310,       model: FVP_Corstone_SSE-310,              fvp_dir: Corstone-310, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AVH-SSE-310,       model: FVP_Corstone_SSE-310,              fvp_dir: Corstone-310, mps: mps3},
+
+          {proj: inference_runner,   build_type: Release-UserModel,   target_type: AVH-SSE-310-U55,   model: FVP_Corstone_SSE-310,              fvp_dir: Corstone-310, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AVH-SSE-310-U55,   model: FVP_Corstone_SSE-310,              fvp_dir: Corstone-310, mps: mps3},
+          {proj: inference_runner,   build_type: Release-TestModel,   target_type: AVH-SSE-310-U55,   model: FVP_Corstone_SSE-310,              fvp_dir: Corstone-310, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AVH-SSE-310-U55,   model: FVP_Corstone_SSE-310,              fvp_dir: Corstone-310, mps: mps3},
+
+          {proj: inference_runner,   build_type: Release-UserModel,   target_type: AVH-SSE-310-U65,   model: FVP_Corstone_SSE-310_Ethos-U65,    fvp_dir: Corstone-310, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AVH-SSE-310-U65,   model: FVP_Corstone_SSE-310_Ethos-U65,    fvp_dir: Corstone-310, mps: mps3},
+          {proj: inference_runner,   build_type: Release-TestModel,   target_type: AVH-SSE-310-U65,   model: FVP_Corstone_SSE-310_Ethos-U65,    fvp_dir: Corstone-310, mps: mps3},
+          {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AVH-SSE-310-U65,   model: FVP_Corstone_SSE-310_Ethos-U65,    fvp_dir: Corstone-310, mps: mps3},
+
+          {proj: inference_runner,   build_type: Release-UserModel,   target_type: AVH-SSE-315,       model: FVP_Corstone_SSE-315,              fvp_dir: Corstone-315, mps: mps4},
+          {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AVH-SSE-315,       model: FVP_Corstone_SSE-315,              fvp_dir: Corstone-315, mps: mps4},
+          {proj: inference_runner,   build_type: Release-TestModel,   target_type: AVH-SSE-315,       model: FVP_Corstone_SSE-315,              fvp_dir: Corstone-315, mps: mps4},
+          {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AVH-SSE-315,       model: FVP_Corstone_SSE-315,              fvp_dir: Corstone-315, mps: mps4},
+
+          {proj: inference_runner,   build_type: Release-UserModel,   target_type: AVH-SSE-315-U65,   model: FVP_Corstone_SSE-315,              fvp_dir: Corstone-315, mps: mps4},
+          {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AVH-SSE-315-U65,   model: FVP_Corstone_SSE-315,              fvp_dir: Corstone-315, mps: mps4},
+          {proj: inference_runner,   build_type: Release-TestModel,   target_type: AVH-SSE-315-U65,   model: FVP_Corstone_SSE-315,              fvp_dir: Corstone-315, mps: mps4},
+          {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AVH-SSE-315-U65,   model: FVP_Corstone_SSE-315,              fvp_dir: Corstone-315, mps: mps4},
+
+          {proj: inference_runner,   build_type: Release-UserModel,   target_type: AVH-SSE-320,       model: FVP_Corstone_SSE-320,              fvp_dir: Corstone-320, mps: mps4},
+          {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AVH-SSE-320,       model: FVP_Corstone_SSE-320,              fvp_dir: Corstone-320, mps: mps4},
+          {proj: inference_runner,   build_type: Release-TestModel,   target_type: AVH-SSE-320,       model: FVP_Corstone_SSE-320,              fvp_dir: Corstone-320, mps: mps4},
+          {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AVH-SSE-320,       model: FVP_Corstone_SSE-320,              fvp_dir: Corstone-320, mps: mps4},
+
+          {proj: inference_runner,   build_type: Release-UserModel,   target_type: AVH-SSE-320-U85,   model: FVP_Corstone_SSE-320,              fvp_dir: Corstone-320, mps: mps4},
+          {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AVH-SSE-320-U85,   model: FVP_Corstone_SSE-320,              fvp_dir: Corstone-320, mps: mps4},
+          {proj: inference_runner,   build_type: Release-TestModel,   target_type: AVH-SSE-320-U85,   model: FVP_Corstone_SSE-320,              fvp_dir: Corstone-320, mps: mps4},
+          {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AVH-SSE-320-U85,   model: FVP_Corstone_SSE-320,              fvp_dir: Corstone-320, mps: mps4}
+        ]
+
+      fail-fast: false
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Install tools
+      uses: ARM-software/cmsis-actions/vcpkg@v1
+      with:
+        config: "vcpkg-configuration.json"
+
+    - name: Activate Arm tool license
+      uses: ARM-software/cmsis-actions/armlm@v1
+
+    - name: Initialize CMSIS pack root folder
+      run: |
+        cpackget init https://www.keil.com/pack/index.pidx
+        cpackget update-index
+
+    - name: Cache downloaded packs
+      uses: actions/cache@v4
+      with:
+        key: cmsis-mlek-download
+        path: /home/runner/.cache/arm/packs/.Download
+
+    - name: AC6-Build-Test 4 context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}}
+      working-directory: ./template/generic
+      run: |
+        cbuild mlek_generic.csolution.yml --update-rte --packs --no-schema-check \
+        --context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}} \
+        --toolchain AC6 --rebuild
