@@ -43,7 +43,9 @@ PACK_BASE_FILES="
 # Specify file names to be deleted from pack build directory
 # Default: empty
 #
-PACK_DELETE_FILES=""
+PACK_DELETE_FILES="
+vcpkg-configuration.json
+"
 
 # Specify patches to be applied
 # Default: empty
