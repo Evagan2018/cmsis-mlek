@@ -1,49 +1,62 @@
-# Overview
+# CMSIS-MLEK Software Pack
 
-The **CMSIS Machine Learning Evaluation Kit (MLEK)** provides a comprehensive framework for developing and deploying machine learning applications on Arm Cortex-M processors with Ethos-U Neural Processing Units. MLEK enables developers to build sophisticated edge AI applications using familiar CMSIS development tools and flows.
+This repository contains **Machine Learning Evaluation Kit (MLEK)** pack which provides [CMSIS Reference Applications](https://open-cmsis-pack.github.io/cmsis-toolbox/ReferenceApplications/) and templates for Edge AI development. These applications implement data preprocessing, memory management, and neural network inference pipelines that are optimized for Cortex-M and Ethos-U platforms.
 
-MLEK is designed to integrate seamlessly with the CMSIS ecosystem, including the CMSIS-Toolbox and CMSIS-compliant Hardware Abstraction Layers and software components. This integration ensures that developers can leverage existing CMSIS knowledge and workflows while accessing advanced ML capabilities optimized for embedded systems.
+Refer to [Overview](./overview/README.md) for more details.
 
-The framework automatically detects NPU-enabled targets through naming conventions and configures appropriate optimizations for each Ethos-U variant. This automatic configuration simplifies development and ensures optimal performance across different hardware platforms.
+## Repository structure
 
+Directory                         | Description
+----------------------------------|-------------------------------
+[overview](./overview)            | Top-level overview of MLEK reference applications.
+[documentation](./documentation/) | [User documentation](https://arm-examples.github.io/cmsis-mlek/main/index.html) of the MLEK reference applications.
+[template](./template)            | [MLEK reference applications](https://arm-examples.github.io/cmsis-mlek/main/template.html), a test framework for DSP and ML algorithms.
+[.github/workflows](./.github/workflows) | GitHub Actions for validation and publishing.
+[.ci](./.ci)                      | Files that relate to CI tests.
 
-## Reference Applications
+## Related
 
-The CMSIS-MLEK Pack includes ready-to-use reference applications organized into three categories:
+- [MLEK Pack](https://www.keil.arm.com/packs/MLEK) available on [keil.arm.com/packs](https://www.keil.arm.com/packs).
+- [MLEK Examples](https://github.com/Arm-Examples/mlek-examples) a repository with MLEK applications that are configured for evaluation boards and use cases.
+- [ML Developers Guide for Cortex-M Processors and Ethos-U NPU](https://developer.arm.com/documentation/109267).
+- [Arm Virtual Hardware - FVP](https://github.com/arm-software/avh) repository with documentation.
 
-| Audio Applications    | |
-| -|-
-| **Keyword Spotting (KWS)** | Real-time wake word detection with MFCC feature extraction and configurable keywords |
-| **User Algorithm Template** | Customizable audio processing template for developing custom audio ML applications |
+## License
 
-| Video Applications  | |
-| -|-
-| **Object Detection** | Real-time object detection using YOLO models with camera integration and bounding box visualization |
-| **User Algorithm Template** | Flexible computer vision template for custom image processing and ML inference | 
+The MLEK references applications are licensed under [![License](https://img.shields.io/github/license/arm-examples/cmsis-mlek?label)](https://github.com/ARM-examples/cmsis-mlek/blob/main/LICENSE).
 
-| Generic Applications | |
-| - | -
-| **Generic Inference Runner** | Performance analysis tool for evaluating ML models during initial porting to Cortex-M/Ethos-U platforms, providing detailed metrics and optimization insights|
+## Documentation
 
-Each reference application includes complete source code, configuration examples, and optimization strategies for different hardware targets and NPU configurations.
+The [documentation](https://arm-software.github.io/SDS-Framework/main/index.html) is generated using  [MKDocs](https://www.mkdocs.org/) with the following additional plugins:
 
-## Features
+- [mermaid2](https://mkdocs-mermaid2.readthedocs.io/en/latest/) for sequence diagrams.
 
-- **Automatic NPU / CPU Detection** — Intelligent target recognition based on naming conventions with automatic optimization
-- **Multi-Platform Support** — Compatible with various evaluation boards, and Fixed Virtual Platforms (FVPs)
-- **CMSIS Integration** — Full compatibility with CMSIS-Toolbox, csolution project format, and standard CMSIS components
-- **CMSIS Layer Design** - Simplifies integration into user application. 
-- **Real-Time Processing** — Optimized for low-latency inference with deterministic performance characteristics
-- **Energy Efficiency** — Advanced power management and workload optimization for battery-powered applications
+Use `mkdocs serve` to generate the documentation on a local computer.
 
-The framework supports comprehensive development workflows including automated testing, continuous integration, and performance analysis across multiple hardware configurations.
+## Contributions and Pull Requests
 
-## Links
+Contributions are accepted under [![License](https://img.shields.io/github/license/arm-examples/cmsis-mlek?label)](https://github.com/ARM-examples/cmsis-mlek/blob/main/LICENSE). Only submit contributions where you have authored all of the code.
 
-- **[Documentation](../documentation/)** — Complete developer guides and API reference
-- **[Getting Started](../documentation/getting-started.md)** — Quick setup and first project tutorial  
-- **[Application Examples](../template/)** — Ready-to-use audio, video, and generic ML applications
-- **[Target Configuration](../documentation/targets/)** — Platform-specific setup and optimization guides
-- **[MLEK Learning Path](https://learn.arm.com/learning-paths/embedded-and-microcontrollers/mlek/)** — Comprehensive MLEK concepts and tutorials
-- **[CMSIS-Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox)** — Modern CMSIS development tools and workflows
+### Issues and Labels
 
+Please feel free to raise an [issue on GitHub](https://github.com/ARM-examples/cmsis-mlek/issues)
+to report misbehavior (i.e. bugs) or start discussions about enhancements. This
+is your best way to interact directly with the maintenance team and the community.
+We encourage you to append implementation suggestions as this helps to decrease the
+workload of the very limited maintenance team.
+
+We will be monitoring and responding to issues as best we can.
+Please attempt to avoid filing duplicates of open or closed items when possible.
+In the spirit of openness we will be tagging issues with the following:
+
+- **bug** – We consider this issue to be a bug that will be investigated.
+- **wontfix** - We appreciate this issue but decided not to change the current behavior.
+- **enhancement** – Denotes something that will be implemented soon.
+- **future** - Denotes something not yet schedule for implementation.
+- **out-of-scope** - We consider this issue loosely related to CMSIS. It might by implemented outside of CMSIS. Let us know about your work.
+- **question** – We have further questions to this issue. Please review and provide feedback.
+- **documentation** - This issue is a documentation flaw that will be improved in future.
+- **review** - This issue is under review. Please be patient.
+- **DONE** - We consider this issue as resolved - please review and close it. In case of no further activity this issues will be closed after a week.
+- **duplicate** - This issue is already addressed elsewhere, see comment with provided references.
+- **Important Information** - We provide essential information regarding planned or resolved major enhancements.
