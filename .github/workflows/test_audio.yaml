@@ -90,6 +90,13 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v4
 
+
+    - name: Restore Latest Pack Build from Cache
+      uses: actions/cache/restore@v4
+      with:
+         path: ${{ github.workspace }}/output
+         key: latest-cmsis-mlek-pack
+
     - name: Install tools
       uses: ARM-software/cmsis-actions/vcpkg@v1
       with:
