@@ -1,6 +1,0 @@
-[output]
-ignoreerrors=
-    
-[filtering]
-ignorewarnings=
-    http-redirected
