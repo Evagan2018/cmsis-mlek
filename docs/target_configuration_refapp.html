@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Target Configuration Hardware Boards - CMSIS MLEK Machine Learning Evaluation Kit (MLEK)</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Target Configuration Hardware Boards";
+        var mkdocs_page_input_path = "target_configuration_refapp.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> CMSIS MLEK Machine Learning Evaluation Kit (MLEK)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="templates_audio.html">Audio Template Applications</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="templates_video.html">Video Template Applications</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Target Configuration Hardware Boards</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#using-vs-code">Using VS Code</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#install-required-packs">Install Required Packs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-new-solution">Create New Solution</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#build-and-run">Build and Run</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#enable-ethos-u-npu-support-for-your-target">Enable Ethos-U NPU support for your target</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reference-applications">Reference Applications</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#audio-template-keyword-spotting">Audio Template: Keyword Spotting</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#video-template-object-detection">Video Template: Object Detection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#generic-template-inference-runner">Generic Template: Inference Runner</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#performance-optimization">Performance Optimization</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="target_configuration_avh.html">Target Configuration Arm Virtual Hardware</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CMSIS MLEK Machine Learning Evaluation Kit (MLEK)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Target Configuration Hardware Boards</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/ARM-Examples/cmsis-mlek/edit/main/documentation/target_configuration_refapp.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="target-configuration-reference-application-hardware">Target Configuration Reference Application Hardware</h1>
+<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD036 -->
+
+<h3 id="using-vs-code">Using VS Code</h3>
+<p>This section explains how to use MLEK reference applications with the <a href="https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-csolution">Arm CMSIS Solution</a> extension for VS Code.</p>
+<h4 id="install-required-packs">Install Required Packs</h4>
+<p>Install the CMSIS-MLEK pack and any required board support packs:</p>
+<pre><code class="language-shell">cpackget add ARM::cmsis-mlek
+</code></pre>
+<h4 id="create-new-solution">Create New Solution</h4>
+<ol>
+<li>Open VS Code and use the <strong>Create a new solution</strong> dialog</li>
+<li>
+<p>Select one of the MLEK reference applications:</p>
+</li>
+<li>
+<p><strong>MLEK Keyword Spotting and Audio User Algorithm Template</strong></p>
+</li>
+<li>
+<p><strong>MLEK Object Detection and Video User Algorithm Template</strong> </p>
+</li>
+<li>
+<p><strong>MLEK Generic Inference Runnner</strong>. (available in pack version 1.0+)</p>
+</li>
+</ol>
+<p><img alt="Select MLEK Template" src="images/SelectMLEKTemplate.png" /></p>
+<ol>
+<li>Configure the target platform and toolchain:</li>
+</ol>
+<p><img alt="Configure MLEK Solution" src="images/ConfigureMLEKSolution.png" /></p>
+<h4 id="build-and-run">Build and Run</h4>
+<p>Refer to the <a href="https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-csolution#cmsis-view">Arm CMSIS CSolution extentions documentation</a> on how to use the CMSIS View. It offers convenient and pre-configured access to build and debug features. </p>
+<h3 id="enable-ethos-u-npu-support-for-your-target">Enable Ethos-U NPU support for your target</h3>
+<p>To enable NPU support for custom hardware:</p>
+<ol>
+<li>Open the <code>*.csolution.yml</code> file and look for the first <code>target-type</code>:</li>
+</ol>
+<pre><code class="language-yml">target-types:
+  - type: MyCustomBoard
+    device: STM32U585AIIx  # Your target MCU
+    variables:
+    ...
+</code></pre>
+<p>To the "type" entry add a suffix that identifies NPU model and MAC configuration. e.g.:</p>
+<pre><code class="language-yml">  - type: MyCustomBoard-U55-128 
+  # or 
+  - type: MyCustomBoard-U85-512
+</code></pre>
+<p>This will configure the project to include the correct drivers and models for the NPU selected.</p>
+<h2 id="reference-applications">Reference Applications</h2>
+<h3 id="audio-template-keyword-spotting">Audio Template: Keyword Spotting</h3>
+<p>The KWS template demonstrates real-time wake word detection:</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Real-time audio preprocessing (MFCC feature extraction)</li>
+<li>Optimized neural network inference using CMSIS-NN</li>
+<li>Configurable wake word models</li>
+<li>Performance profiling and benchmarking</li>
+</ul>
+<p><strong>Getting Started:</strong></p>
+<ol>
+<li>Build and run the template on your target platform</li>
+<li>Speak the wake word (e.g. "Yes" or "Up")</li>
+<li>Observe detection results via UART output or LEDs</li>
+<li>Replace the model with your custom wake word model</li>
+</ol>
+<p><strong>Customization Points:</strong></p>
+<ul>
+<li><code>kws/src/kws_model.cpp</code>: Replace with your TensorFlow Lite model</li>
+<li><code>kws/src/audio_preprocessing.cpp</code>: Modify audio preprocessing pipeline  </li>
+<li><code>kws/config/kws_config.h</code>: Adjust detection thresholds and parameters</li>
+</ul>
+<h3 id="video-template-object-detection">Video Template: Object Detection</h3>
+<p>The object detection template provides real-time computer vision:</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Camera input processing and frame buffering</li>
+<li>Object detection using MobileNet-based models</li>
+<li>Bounding box visualization</li>
+<li>Multi-object detection and classification</li>
+</ul>
+<p><strong>Getting Started:</strong></p>
+<ol>
+<li>Build and run the template with camera input</li>
+<li>Point camera at objects for detection</li>
+<li>View detection results on display or via debug output</li>
+<li>Integrate your custom object detection model</li>
+</ol>
+<p><strong>Customization Points:</strong></p>
+<ul>
+<li><code>object-detection/src/detection_model.cpp</code>: Replace with your model</li>
+<li><code>object-detection/src/image_preprocessing.cpp</code>: Modify image preprocessing</li>
+<li><code>object-detection/config/detection_config.h</code>: Adjust detection parameters</li>
+</ul>
+<h3 id="generic-template-inference-runner">Generic Template: Inference Runner</h3>
+<p>(available in pack version 1.0+)</p>
+<p>The generic inference template provides maximum flexibility:</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Framework for any TensorFlow Lite model</li>
+<li>Configurable input/output tensors</li>
+<li>Performance benchmarking utilities</li>
+<li>Extensible architecture for custom applications</li>
+</ul>
+<p><strong>Getting Started:</strong></p>
+<ol>
+<li>Replace the example model with your TensorFlow Lite model</li>
+<li>Configure input/output tensor specifications</li>
+<li>Implement custom preprocessing/postprocessing</li>
+<li>Build and test your custom ML application</li>
+</ol>
+<p><strong>Customization Points:</strong></p>
+<ul>
+<li><code>inference_runner/Model/</code>: Replace with your TensorFlow Lite model files</li>
+<li><code>inference_runner/src/inference_runner.cpp</code>: Modify inference pipeline</li>
+<li><code>inference_runner/config/</code>: Adjust model and application configuration</li>
+</ul>
+<h2 id="performance-optimization">Performance Optimization</h2>
+<p>All MLEK templates include built-in performance optimization features:</p>
+<ul>
+<li><strong>CMSIS-NN Integration</strong>: Optimized neural network kernels for Cortex-M</li>
+<li><strong>Ethos-U Acceleration</strong>: NPU acceleration for supported layers</li>
+<li><strong>Memory Optimization</strong>: Efficient memory management and tensor allocation</li>
+<li><strong>Profiling Tools</strong>: Built-in timing and resource usage measurements</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<p>After successfully running an MLEK template:</p>
+<ol>
+<li><strong>Model Integration</strong>: Replace the example model with your trained TensorFlow Lite model</li>
+<li><strong>Application Customization</strong>: Modify the application logic for your specific use case  </li>
+<li><strong>Performance Tuning</strong>: Optimize for your target constraints (memory, power, latency)</li>
+<li><strong>Hardware Deployment</strong>: Test on your target hardware platform</li>
+<li><strong>Production Deployment</strong>: Integrate into your final product design</li>
+</ol>
+<p>For detailed examples and additional resources, refer to the individual template README files and the MLEK documentation.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="templates_video.html" class="btn btn-neutral float-left" title="Video Template Applications"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="target_configuration_avh.html" class="btn btn-neutral float-right" title="Target Configuration Arm Virtual Hardware">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/ARM-Examples/cmsis-mlek" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="templates_video.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="target_configuration_avh.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

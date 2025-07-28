@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Video Template Applications - CMSIS MLEK Machine Learning Evaluation Kit (MLEK)</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Video Template Applications";
+        var mkdocs_page_input_path = "templates_video.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> CMSIS MLEK Machine Learning Evaluation Kit (MLEK)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="templates_audio.html">Audio Template Applications</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Video Template Applications</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#video-processing-templates">Video Processing Templates</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#required-api-interfaces">Required API Interfaces</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#object-detection-application">Object Detection Application</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#build-types">Build Types</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#video-user-algorithm-template">Video User Algorithm Template</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#working-with-mlek-templates">Working with MLEK Templates</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="target_configuration_refapp.html">Target Configuration Hardware Boards</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="target_configuration_avh.html">Target Configuration Arm Virtual Hardware</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CMSIS MLEK Machine Learning Evaluation Kit (MLEK)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Video Template Applications</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/ARM-Examples/cmsis-mlek/edit/main/documentation/templates_video.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="mlek-reference-application-templates">MLEK Reference Application Templates</h1>
+<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD036 -->
+
+<h2 id="video-processing-templates">Video Processing Templates</h2>
+<p>These templates focus on real-time audio processing:</p>
+<ul>
+<li><strong>Keyword Spotting (KWS)</strong>: Demonstrates wake word detection and voice command recognition</li>
+<li><strong>Audio User Algorithm Template</strong>: Provides a foundation for custom audio ML processing applications</li>
+</ul>
+<h3 id="required-api-interfaces">Required API Interfaces</h3>
+<p>For hardware deployment, the Board-Layer should provide the following API interfaces:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Required API Interface</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>CMSIS_VIO</strong></td>
+<td style="text-align: left;">Virtual I/O interface for LEDs, buttons, and basic I/O</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CMSIS_VSTREAM_VIDEO_IN</strong></td>
+<td style="text-align: left;">Virtual Video Input / Camera Interface</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CMSIS_VSTREAM_VIDEO_OUT</strong></td>
+<td style="text-align: left;">Virtual Video Output / Display</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>STDOUT, STDERR</strong></td>
+<td style="text-align: left;">Standard output for printf debugging and logging</td>
+</tr>
+</tbody>
+</table>
+<p>These interfaces ideally are supplied by the vendor of your evaluation board. For custom hardware, details on the implementation are 
+found in the <a href="https://arm-software.github.io/CMSIS_6/latest/Driver/group__vstream__interface__gr.html">CMSIS-Driver Manual</a></p>
+<h2 id="object-detection-application">Object Detection Application</h2>
+<p>This example uses a neural network model that specialises in detecting human faces in images.
+The input size for these images is 192x192 (monochrome) and the smallest face that can be detected is of size 20x20. The output of the application will be co-ordinates for rectangular bounding boxes for each detection.</p>
+<h3 id="build-types">Build Types</h3>
+<p>The Object Detection example defines four build types that control debug information and the video source:</p>
+<table>
+<thead>
+<tr>
+<th>Build Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Debug-Live_Stream</strong></td>
+<td>Capture frames from a camera in real time. Debug information enabled.</td>
+</tr>
+<tr>
+<td><strong>Release-Live_Stream</strong></td>
+<td>Capture frames from a camera in real time. With optimizations for performance.</td>
+</tr>
+<tr>
+<td><strong>Debug-Data_Array</strong></td>
+<td>Built-in image data for regression testing with debug information.</td>
+</tr>
+<tr>
+<td><strong>Release-Data_Array</strong></td>
+<td>Built-in image data with release optimizations.</td>
+</tr>
+</tbody>
+</table>
+<p>Use the Debug build types during development and the Release build types for performance measurements. Switch between <em>Live_Stream</em> and <em>Data_Array</em> depending on whether you want real-time video or a fixed sample. On Arm Virtual Hardware Targets, the Live_Stream is utilizing the VSI interface</p>
+<h2 id="video-user-algorithm-template">Video User Algorithm Template</h2>
+<p>Todo</p>
+<h2 id="working-with-mlek-templates">Working with MLEK Templates</h2>
+<p>See Target Configuration chapters on how to deploy the reference applications to a specific hardware or simulation target. </p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="templates_audio.html" class="btn btn-neutral float-left" title="Audio Template Applications"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="target_configuration_refapp.html" class="btn btn-neutral float-right" title="Target Configuration Hardware Boards">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/ARM-Examples/cmsis-mlek" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="templates_audio.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="target_configuration_refapp.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
