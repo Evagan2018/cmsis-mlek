@@ -36,3 +36,9 @@ jobs:
           gen-pack-output: ./output
           gen-doc-script: ./documentation/gen_doc.sh
           doc-path: ./docs
+
+      - name: Cache artifact
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ github.workspace }}/output
+          key: latest-cmsis-mlek-pack
