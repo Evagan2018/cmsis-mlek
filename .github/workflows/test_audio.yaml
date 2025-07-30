@@ -90,22 +90,7 @@ jobs:
     - name: Get the vcpkg-configuration.json file    
       uses: actions/checkout@v4
       with:
-       path: 'ARM/cmsis-mlek'
-       sparse-checkout: vcpkg-configuration.json
-
-    - name: Keep only the vcpkg-configuration.json file
-      working-directory: ./ARM/cmsis-mlek
-      run: |
-        keep="vcpkg-configuration.json"
-        if [ -f "$keep" ]; then
-          for file in *; do
-            [ "$file" != "$keep" ] && [ -f "$file" ] && rm -f "$file"
-          done
-          exit 0
-        else
-          echo "Error: $keep does not exist." >&2
-          exit 1
-        fi
+       sparse-checkout: .ci
 
     - name: Restore Latest Pack Build from Cache
       uses: actions/cache/restore@v4
