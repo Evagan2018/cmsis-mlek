@@ -27,7 +27,7 @@ The MLEK references applications are licensed under [![License](https://img.shie
 
 ## Documentation
 
-The [documentation](https://arm-software.github.io/SDS-Framework/main/index.html) is generated using  [MKDocs](https://www.mkdocs.org/) with the following additional plugins:
+The [documentation](https://arm-examples.github.io/cmsis-mlek/index.html) is generated using  [MKDocs](https://www.mkdocs.org/) with the following additional plugins:
 
 - [mermaid2](https://mkdocs-mermaid2.readthedocs.io/en/latest/) for sequence diagrams.
 
