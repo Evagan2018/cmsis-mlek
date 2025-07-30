@@ -102,13 +102,34 @@
 <li><strong>Performance Validation</strong>: Test and optimize ML performance on target hardware or simulation.</li>
 <li><strong>Hardware Evaluation</strong>: Compare performance across different Corstone platforms and configurations.</li>
 </ul>
-<p>MLEK covers three main application domains:</p>
-<ul>
-<li><a href="https://arm-examples.github.io/cmsis-mlek/templates_audio.html">Audio</a> processing with audio classification and keyword spotting.</li>
-<li><a href="https://arm-examples.github.io/cmsis-mlek/templates_video.html">Video</a> processing with image classification and object detection.</li>
-<li><a href="https://arm-examples.github.io/cmsis-mlek">Generic</a> inference for flexible ML model deployment.</li>
-</ul>
-<p>Each reference applications is a <em>csolution project</em> which supports deployment to physical hardware or Arm Virtual Hardware (AVH-FVP) for simulation.</p>
+<p>The CMSIS-MLEK software pack is derived from the <a href="https://git.gitlab.arm.com/artificial-intelligence/ethos-u/ml-embedded-evaluation-kit">Arm® ML embedded evaluation kit</a> and makes the examples easier to access. It also contains interfaces to physical hardware and simplifies porting to target hardware. It contains the following ML applications and uses currently Neural Network Models currently in <a href="https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow">TensorFlow Lite</a> format.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ML application</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Neural Network Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/ARM-software/cmsis-mlek/template/audio">Keyword spotting (KWS)</a></td>
+<td style="text-align: left;">Recognize the presence of a key word in verbal speech</td>
+<td style="text-align: left;"><a href="https://github.com/ARM-software/ML-zoo/tree/9f506fe52b39df545f0e6c5ff9223f671bc5ae00/models/keyword_spotting/micronet_medium/tflite_int8">MicroNet</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/ARM-software/cmsis-mlek/template/video">Object detection</a></td>
+<td style="text-align: left;">Detects and draws face bounding box in a given image</td>
+<td style="text-align: left;"><a href="https://github.com/emza-vs/ModelZoo/blob/master/object_detection/yolo-fastest_192_face_v4.tflite">Yolo Fastest</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/ARM-software/cmsis-mlek/template/generic">Generic inference runner</a></td>
+<td style="text-align: left;">Code block allowing you to develop your own use case</td>
+<td style="text-align: left;">Your custom model</td>
+</tr>
+</tbody>
+</table>
+<p>Each <a href="https://open-cmsis-pack.github.io/cmsis-toolbox/ReferenceApplications/">ML reference application</a> is a <em>csolution project</em> which supports deployment to physical hardware or Arm Virtual Hardware (AVH-FVP) for simulation.</p>
 <p><img alt="MLEK Reference Application Architecture" src="images/MLEK-Architecture.png" /></p>
 <p>A board layer (<code>*.clayer.yml</code>) implements the drivers for the physical interfaces. The API interfaces required by the different applications is shown in the table below.</p>
 <table>
@@ -128,6 +149,10 @@
 <td style="text-align: left;"><a href="https://arm-software.github.io/CMSIS_6/latest/Driver/group__mci__interface__gr.html">CMSIS-Driver vStream</a> configured for Audio input.</td>
 </tr>
 <tr>
+<td style="text-align: left;">STDOUT</td>
+<td style="text-align: left;">Standard I/O for printf output.</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>Video Processing</strong></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -140,44 +165,53 @@
 <td style="text-align: left;"><a href="https://arm-software.github.io/CMSIS_6/latest/Driver/group__mci__interface__gr.html">CMSIS-Driver vStream</a> configured for Video output.</td>
 </tr>
 <tr>
+<td style="text-align: left;">STDOUT</td>
+<td style="text-align: left;">Standard I/O for printf output.</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>Generic Inference Runner</strong></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr>
-<td style="text-align: left;">CMSIS_VSTREAM_AUDIO_IN</td>
-<td style="text-align: left;">[CMSIS-Driver vStream](https://arm-software.github.io/CMSIS_6/latest/Driver/group__mci__interface__gr.html configured for Audio input.</td>
+<td style="text-align: left;">STDOUT</td>
+<td style="text-align: left;">Standard I/O for printf output.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="platform-support">Platform Support</h2>
-<p>The templates support via <em>target names</em> multiple <a href="https://www.arm.com/products/silicon-ip-subsystems#Products">Arm Cortex-M IP Subsystems</a>. </p>
+<p>The templates support via <em>target names</em> multiple <a href="https://www.arm.com/products/silicon-ip-subsystems#Products">Arm Cortex-M IP Subsystems</a>. These <em>target names</em> support execution on <a href="https://arm-software.github.io/AVH/main/simulation/html/index.html">AVH FVP simulation models</a> which is useful during software development or with <a href="https://github.com/Arm-Examples/cmsis-mlek/actions">Contiguous Integration (CI)</a> testing using GitHub actions.</p>
 <table>
 <thead>
 <tr>
+<th style="text-align: left;">Target Name</th>
 <th style="text-align: left;">IP Subsystem</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Corstone-300</td>
+<td style="text-align: left;">AVH-SSE-300</td>
+<td style="text-align: left;"><a href="https://developer.arm.com/Processors/Corstone-300">Corstone-300</a></td>
 <td style="text-align: left;">Cortex-M55 optional with Ethos-U55 or Ethos-U65</td>
 </tr>
 <tr>
-<td style="text-align: left;">Corstone-310</td>
+<td style="text-align: left;">AVH-SSE-310</td>
+<td style="text-align: left;"><a href="https://developer.arm.com/Processors/Corstone-310">Corstone-310</a></td>
 <td style="text-align: left;">Cortex-M85 optional with Ethos-U55</td>
 </tr>
 <tr>
-<td style="text-align: left;">Corstone-315</td>
+<td style="text-align: left;">AVH-SSE-315</td>
+<td style="text-align: left;"><a href="https://developer.arm.com/Processors/Corstone-315">Corstone-315</a></td>
 <td style="text-align: left;">Cortex-M85 optional with Ethos-U65</td>
 </tr>
 <tr>
-<td style="text-align: left;">Corstone-320</td>
+<td style="text-align: left;">AVH-SSE-320</td>
+<td style="text-align: left;"><a href="https://developer.arm.com/Processors/Corstone-320">Corstone-320</a></td>
 <td style="text-align: left;">Cortex-M85 optional with Ethos-U85</td>
 </tr>
 </tbody>
 </table>
-<p>Adding a postfix to the <em>target name</em> in the <code>*.csolution.yml</code> project file configures the neural network inference pipeline for Ethos-U. Without this prefix only the Cortex-M system is used as shown in the diagram below.</p>
+<p>Adding a postfix to the <em>target name</em> in the <code>*.csolution.yml</code> project file configures the neural network inference pipeline for Ethos-U. Without this prefix only the Cortex-M system is used as shown in the diagram below. Such a postfix can also be used for <em>target names</em> that deploy to physical hardware.</p>
 <table>
 <thead>
 <tr>
