@@ -29,7 +29,6 @@ PACK_BUILD=./build
 # Default: empty (all folders)
 #
 PACK_DIRS="
-  documentation
   template
   overview
 "
