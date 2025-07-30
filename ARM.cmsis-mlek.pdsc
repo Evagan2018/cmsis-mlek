@@ -4,7 +4,7 @@
   <name>cmsis-mlek</name>
   <description overview="overview/README.md">MLEK Templates and Examples package for CMSIS workflows</description>
   <!-- web download link -->
-  <url>https://github.com/Arm-Examples/cmsis-mlek</url>
+  <url>https://www.keil.com/pack/</url>
   <license>LICENSE</license>
 
   <releases>
