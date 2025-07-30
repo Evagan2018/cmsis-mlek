@@ -52,7 +52,8 @@ Adding a postfix to the _target name_ in the `*.csolution.yml` project file conf
 | Postfix      | Description |
 |:-------------|:------------|
 | _none_       | Cortex-M system only, no Ethos-U NPU |
-| `-U55`       | Cortex-M system + Ethos-U55 NPU |
+| `-U55-128`   | Cortex-M system + Ethos-U55 NPU (128 MACs) |
+| `-U55`       | Cortex-M system + Ethos-U55 NPU (256 MACs) |
 | `-U65`       | Cortex-M system + Ethos-U65 NPU |
 | `-U85`       | Cortex-M system + Ethos-U85 NPU |
 

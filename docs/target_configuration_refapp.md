@@ -57,6 +57,8 @@ To the "type" entry add a suffix that identifies NPU model and MAC configuration
   # or 
   - type: MyCustomBoard-U85-512
 ```
+If you do not specify a MAC variant, 256 will be the default. 
+
 
 This will configure the project to include the correct drivers and models for the NPU selected.
 
