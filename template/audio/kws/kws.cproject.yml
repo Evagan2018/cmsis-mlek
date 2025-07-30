@@ -51,6 +51,11 @@ project:
     - ./include/
 
   groups:
+
+    - group: Documentation
+      files:
+        - file: ../README.md
+ 
     - group: Application Main
       files:
         - file: src/main_kws.cpp

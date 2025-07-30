@@ -53,6 +53,11 @@ project:
     - ./include/
 
   groups:
+ 
+    - group: Documentation
+      files:
+        - file: ../README.md
+ 
     - group: Application Main
       files:
         - file: src/main_object_detection.cpp

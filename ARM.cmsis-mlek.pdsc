@@ -4,7 +4,7 @@
   <name>cmsis-mlek</name>
   <description overview="overview/README.md">MLEK Templates and Examples package for CMSIS workflows</description>
   <!-- web download link -->
-  <url>https://</url>
+  <url>https://github.com/Arm-Examples/cmsis-mlek</url>
   <license>LICENSE</license>
 
   <releases>
@@ -14,8 +14,8 @@
   </releases>
 
   <examples>
-    <example name="MLEK Keyword Spotting and Audio User Algorithm Template" folder="template/audio" doc="README.md">
-      <description></description>
+    <example name="MLEK_Audio" folder="template/audio" doc="README.md">
+      <description>MLEK Keyword Spotting and Audio User Algorithm Template</description>
       <project>
         <environment name="csolution" load="mlek_audio.csolution.yml"/>
       </project>
@@ -25,8 +25,8 @@
       </attributes>
     </example>
 
-    <example name="MLEK Object Detection and Video User Algorithm Template" folder="template/video" doc="README.md">
-      <description></description>
+    <example name="MLEK_Video" folder="template/video" doc="README.md">
+      <description>MLEK Object Detection and Video User Algorithm Template</description>
       <project>
         <environment name="csolution" load="mlek_video.csolution.yml"/>
       </project>
@@ -36,8 +36,8 @@
       </attributes>
     </example>
 
-  <!-- example name="MLEK Generic Inference Runnner" folder="template/generic" doc="README.md">
-      <description></description>
+  <!-- example name="MLEK_Generic" folder="template/generic" doc="README.md">
+      <description>MLEK Generic Inference Runner</description>
       <project>
         <environment name="csolution" load="mlek_generic.csolution.yml"/>
       </project>
