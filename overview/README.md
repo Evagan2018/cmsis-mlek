@@ -62,5 +62,5 @@ Adding a postfix to the _target name_ in the `*.csolution.yml` project file conf
 ## Links
 
 - [Documentation](https://arm-examples.github.io/cmsis-mlek)
-- [CMSIS-MLEK](https://github.com/ARM-software/cmsis-mlek) GitHub repository
+- [CMSIS-MLEK](https://github.com/ARM-examples/cmsis-mlek) GitHub repository
 - [TensorFlow Lite](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) Software Pack
