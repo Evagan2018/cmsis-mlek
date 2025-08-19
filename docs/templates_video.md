@@ -1,17 +1,14 @@
-# MLEK Reference Application Templates
+# MLEK Video Application
 
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD036 -->
 
+This chapter describes the MLEK reference applications for real-time video processing:
 
-## Video Processing Templates
+- **Video/Object Detection**: Object detection using camera input, bounding box data visualization
+- **Video/User Algorithm**: Provides a foundation for a custom ML algorithms
 
-These templates focus on real-time audio processing:
-
-- **Keyword Spotting (KWS)**: Demonstrates wake word detection and voice command recognition
-- **Audio User Algorithm Template**: Provides a foundation for custom audio ML processing applications
-
-### Required API Interfaces
+## Required API Interfaces
 
 For hardware deployment, the Board-Layer should provide the following API interfaces:
 
@@ -29,7 +26,6 @@ found in the [CMSIS-Driver Manual](https://arm-software.github.io/CMSIS_6/latest
 
 This example uses a neural network model that specialises in detecting human faces in images.
 The input size for these images is 192x192 (monochrome) and the smallest face that can be detected is of size 20x20. The output of the application will be co-ordinates for rectangular bounding boxes for each detection.
-
 
 ### Build Types
 The Object Detection example defines four build types that control debug information and the video source:

@@ -18,13 +18,13 @@ Directory                         | Description
 ----------------------------------|-------------------------------
 [overview](./overview)            | Top-level overview of MLEK reference applications.
 [docs](./docs/)                   | Source of the [user documentation](https://arm-examples.github.io/cmsis-mlek) of the MLEK reference applications.
-[template](./template)            | [MLEK reference applications](https://arm-examples.github.io/cmsis-mlek/main/template.html), a test framework for DSP and ML algorithms.
+[template](./template)            | MLEK reference applications source code.
 [.github/workflows](./.github/workflows) | GitHub Actions for validation and publishing.
 [.ci](./.ci)                      | Files that relate to CI tests.
 
 ## Related
 
-- [MLEK Pack](https://www.keil.arm.com/packs/MLEK) available on [keil.arm.com/packs](https://www.keil.arm.com/packs).
+- [CMSIS-MLEK Pack](https://www.keil.arm.com/packs/cmsis-mlek-arm) available on [keil.arm.com/packs](https://www.keil.arm.com/packs).
 - [tensorflow-lite-micro Pack](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) available on [keil.arm.com/packs](https://www.keil.arm.com/packs).
 - [MLEK Examples](https://github.com/Arm-Examples/mlek-examples) a repository with MLEK applications that are configured for evaluation boards and use cases.
 - [ML Developers Guide for Cortex-M Processors and Ethos-U NPU](https://developer.arm.com/documentation/109267).

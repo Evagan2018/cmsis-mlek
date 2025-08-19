@@ -1,13 +1,13 @@
-site_name: CMSIS MLEK Machine Learning Evaluation Kit (MLEK)
+site_name: Machine Learning Evaluation Kit (MLEK) for CMSIS Workflows
 repo_url: https://github.com/ARM-Examples/cmsis-mlek
 edit_uri: ./edit/main/docs
 nav:
     - Home: index.md
     - Overview: overview.md
-    - Audio Template Applications: templates_audio.md
-    - Video Template Applications: templates_video.md
-    - Target Configuration Hardware Boards: target_configuration_refapp.md
-    - Target Configuration Arm Virtual Hardware: target_configuration_avh.md
+    - MLEK - Audio Applications: templates_audio.md
+    - MLEK - Video Applications: templates_video.md
+    - Targeting Hardware Boards: target_configuration_refapp.md
+    - Targeting Arm Virtual Hardware: target_configuration_avh.md
 
 plugins:
     - search
