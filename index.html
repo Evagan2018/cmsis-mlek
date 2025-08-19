@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
       <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>CMSIS MLEK Machine Learning Evaluation Kit (MLEK)</title>
+    <title>Machine Learning Evaluation Kit (MLEK) for CMSIS Workflows</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -31,7 +31,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="index.html" class="icon icon-home"> CMSIS MLEK Machine Learning Evaluation Kit (MLEK)
+          <a href="index.html" class="icon icon-home"> Machine Learning Evaluation Kit (MLEK) for CMSIS Workflows
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
@@ -45,13 +45,7 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#target-audience">Target Audience</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#package-overview">Package Overview</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#manual-chapters">Manual Chapters</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#available-templates">Available Templates</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#supported-platforms">Supported Platforms</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#revision-history">Revision History</a>
     </li>
@@ -63,19 +57,19 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="templates_audio.html">Audio Template Applications</a>
+                <li class="toctree-l1"><a class="reference internal" href="templates_audio.html">MLEK - Audio Applications</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="templates_video.html">Video Template Applications</a>
+                <li class="toctree-l1"><a class="reference internal" href="templates_video.html">MLEK - Video Applications</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="target_configuration_refapp.html">Target Configuration Hardware Boards</a>
+                <li class="toctree-l1"><a class="reference internal" href="target_configuration_refapp.html">Targeting Hardware Boards</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="target_configuration_avh.html">Target Configuration Arm Virtual Hardware</a>
+                <li class="toctree-l1"><a class="reference internal" href="target_configuration_avh.html">Targeting Arm Virtual Hardware</a>
                 </li>
               </ul>
       </div>
@@ -85,7 +79,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">CMSIS MLEK Machine Learning Evaluation Kit (MLEK)</a>
+          <a href="index.html">Machine Learning Evaluation Kit (MLEK) for CMSIS Workflows</a>
         
       </nav>
       <div class="wy-nav-content">
@@ -102,72 +96,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="cmsis-mlek-reference-application-package">CMSIS-MLEK Reference Application Package</h1>
-<p>This documentation explains the usage of the CMSIS-MLEK Reference Application Package for developing Machine Learning (ML) and Edge AI applications on Cortex-M processors with Ethos-U NPUs.</p>
+                <h1 id="machine-learning-evaluation-kit-mlek-for-cmsis-workflows">Machine Learning Evaluation Kit (MLEK) for CMSIS Workflows</h1>
+<p>This documentation explains the usage of the CMSIS-MLEK Reference Application Package for developing Machine Learning (ML) and Edge AI applications on Cortex-M processors optional with Ethos-U NPUs.</p>
 <h2 id="target-audience">Target Audience</h2>
 <p>This user's guide assumes basic knowledge about Cortex-M software development and CMSIS-Toolbox workflows. It is written for embedded software developers who work with C/C++ compiler toolchains and develop machine learning applications for microcontroller devices with Cortex-M processors and Ethos-U NPUs.</p>
-<h2 id="package-overview">Package Overview</h2>
-<p>The CMSIS-MLEK package provides ready-to-use templates and examples for machine learning applications. It includes three main template categories:</p>
-<ul>
-<li><strong>Audio Reference Applications</strong> - Keyword spotting and audio processing examples</li>
-<li><strong>Video Reference Applications</strong> - Object detection and video processing examples  </li>
-<li><strong>Generic Reference Applications</strong> - General-purpose inference runner for custom ML models (available from version 1.0+)</li>
-</ul>
 <h2 id="manual-chapters">Manual Chapters</h2>
 <ul>
 <li><a href="overview.html"><strong>Overview</strong></a> explains the features and capabilities of the MLEK templates package.</li>
-<li><a href="templates_audio.html"><strong>MLEK Reference Applications - Audio</strong></a> describes the available ML templates for audio use-cases.</li>
-<li><a href="templates_video.html"><strong>MLEK Reference Applications - Video</strong></a> describes the available ML templates for video and image use-cases.</li>
-<li><a href="target_configuration_refapp.html"><strong>Target Configuration Reference Application Hardware</strong></a> gives step-by-step guidance for deploying the reference applications to a hardware platform in Visual Studion Code. </li>
-<li><a href="target_configuration_avh.html"><strong>Target Configuration Arm Virtual Hardware</strong></a> shows how to select a virtual target in Visual Studio code.  </li>
+<li><a href="templates_audio.html"><strong>MLEK Audio Applications</strong></a> describes the available ML templates for audio use-cases.</li>
+<li><a href="templates_video.html"><strong>MLEK Video Applications</strong></a> describes the available ML templates for video and image use-cases.</li>
+<li><a href="target_configuration_refapp.html"><strong>Targeting Hardware Boards</strong></a> gives step-by-step guidance for deploying the reference applications to a hardware platform in VS Code.</li>
+<li><a href="target_configuration_avh.html"><strong>Targeting Arm Virtual Hardware</strong></a> shows how to select a virtual target in Visual Studio code.  </li>
 </ul>
-<h2 id="available-templates">Available Templates</h2>
-<p>The package includes the following example templates:</p>
-<table>
-<thead>
-<tr>
-<th>Template</th>
-<th>Description</th>
-<th>Key Features</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Audio/KWS</strong></td>
-<td>Keyword spotting application</td>
-<td>Real-time audio processing, wake word detection</td>
-</tr>
-<tr>
-<td><strong>Audio/User Algorithm</strong></td>
-<td>Customizable audio processing template</td>
-<td>Template for implementing custom audio ML algorithms</td>
-</tr>
-<tr>
-<td><strong>Video/Object Detection</strong></td>
-<td>Object detection using camera input</td>
-<td>Real-time object detection, bounding box visualization</td>
-</tr>
-<tr>
-<td><strong>Video/User Algorithm</strong></td>
-<td>Customizable video processing template</td>
-<td>Template for implementing custom video ML algorithms</td>
-</tr>
-<tr>
-<td><strong>Generic/Inference Runner</strong></td>
-<td>General-purpose ML inference</td>
-<td>Support for custom TensorFlow Lite models</td>
-</tr>
-</tbody>
-</table>
-<h2 id="supported-platforms">Supported Platforms</h2>
-<p>The templates support multiple Arm Cortex-M platforms:</p>
-<ul>
-<li><strong>Corstone-300</strong> (Cortex-M55 + Ethos-U55/U65)</li>
-<li><strong>Corstone-310</strong> (Cortex-M85 + Ethos-U55/U65) </li>
-<li><strong>Corstone-315</strong> (Cortex-M85 + Ethos-U65)</li>
-<li><strong>Corstone-320</strong> (Cortex-M85 + Ethos-U85)</li>
-</ul>
-<p>Each template can be built for both Arm Virtual Hardware (AVH) simulation and physical evaluation boards.</p>
+<!--  Duplicate of Overview.md
+## Package Overview
+
+The CMSIS-MLEK package provides ready-to-use templates and examples for machine learning applications. It includes three main template categories:
+
+- **Audio Reference Applications** - Keyword spotting and audio processing examples
+- **Video Reference Applications** - Object detection and video processing examples  
+- **Generic Reference Applications** - General-purpose inference runner for custom ML models (available from version 1.0+)
+
+## Available Templates
+
+The package includes the following example templates:
+
+| Template | Description | Key Features |
+|----------|-------------|--------------|
+| **Audio/KWS** | Keyword spotting application | Real-time audio processing, wake word detection |
+| **Audio/User Algorithm** | Customizable audio processing template | Template for implementing custom audio ML algorithms |
+| **Video/Object Detection** | Object detection using camera input | Real-time object detection, bounding box visualization |
+| **Video/User Algorithm** | Customizable video processing template | Template for implementing custom video ML algorithms |
+| **Generic/Inference Runner** | General-purpose ML inference | Support for custom TensorFlow Lite models |
+
+## Supported Platforms
+
+The templates support multiple Arm Cortex-M platforms:
+
+- **Corstone-300** (Cortex-M55 + Ethos-U55/U65)
+- **Corstone-310** (Cortex-M85 + Ethos-U55/U65) 
+- **Corstone-315** (Cortex-M85 + Ethos-U65)
+- **Corstone-320** (Cortex-M85 + Ethos-U85)
+
+Each template can be built for both Arm Virtual Hardware (AVH) simulation and physical evaluation boards.
+-->
+
 <h2 id="revision-history">Revision History</h2>
 <table>
 <thead>
@@ -177,10 +150,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>0.1.0</td>
-<td>Initial draft release of CMSIS-MLEK templates package</td>
-</tr>
 <tr>
 <td>0.5.0</td>
 <td>First published release.</td>
@@ -239,5 +208,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-07-30 13:44:21.230523+00:00
+Build Date UTC : 2025-08-19 12:53:52.490192+00:00
 -->
