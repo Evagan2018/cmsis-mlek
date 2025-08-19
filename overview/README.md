@@ -14,9 +14,9 @@ The CMSIS-MLEK software pack is derived from the [Arm® ML embedded evaluation k
 
 | ML application                                 | Description             |  Neural Network Model |
 |:-----------------------------------------------|:------------------------|:----------------------|
-| [Keyword spotting (KWS)](https://github.com/ARM-software/cmsis-mlek/template/audio)      | Recognize the presence of a key word in verbal speech | [MicroNet](https://github.com/ARM-software/ML-zoo/tree/9f506fe52b39df545f0e6c5ff9223f671bc5ae00/models/keyword_spotting/micronet_medium/tflite_int8) |
-| [Object detection](https://github.com/ARM-software/cmsis-mlek/template/video)           | Detects and draws face bounding box in a given image  | [Yolo Fastest](https://github.com/emza-vs/ModelZoo/blob/master/object_detection/yolo-fastest_192_face_v4.tflite) |
-| [Generic inference runner](https://github.com/ARM-software/cmsis-mlek/template/generic) | Code block allowing you to develop your own use case  | Your custom model |
+| [Keyword spotting (KWS)](https://github.com/Arm-Examples/cmsis-mlek/template/audio)      | Recognize the presence of a key word in verbal speech | [MicroNet](https://github.com/ARM-software/ML-zoo/tree/9f506fe52b39df545f0e6c5ff9223f671bc5ae00/models/keyword_spotting/micronet_medium/tflite_int8) |
+| [Object detection](https://github.com/Arm-Examples/cmsis-mlek/template/video)           | Detects and draws face bounding box in a given image  | [Yolo Fastest](https://github.com/emza-vs/ModelZoo/blob/master/object_detection/yolo-fastest_192_face_v4.tflite) |
+| [Generic inference runner](https://github.com/Arm-Examples/cmsis-mlek/template/generic) | Code block allowing you to develop your own use case  | Your custom model |
 
 Each [ML reference application](https://open-cmsis-pack.github.io/cmsis-toolbox/ReferenceApplications/) is a *csolution project* which supports deployment to physical hardware or Arm Virtual Hardware (AVH-FVP) for simulation.
 
@@ -62,5 +62,6 @@ Adding a postfix to the _target name_ in the `*.csolution.yml` project file conf
 ## Links
 
 - [Documentation](https://arm-examples.github.io/cmsis-mlek)
-- [CMSIS-MLEK](https://github.com/ARM-examples/cmsis-mlek) GitHub repository
+- [CMSIS-MLEK](https://github.com/Arm-Examples/cmsis-mlek) GitHub repository
 - [TensorFlow Lite](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) Software Pack
+- [SDS](https://www.keil.arm.com/packs/sds-arm) Synchronous Data Stream Framework for algorithm development

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package schemaVersion="1.7.40" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.40/schema/PACK.xsd">
   <vendor>ARM</vendor>
-  <name>CMSIS-MLEK</name>
-  <description overview="overview/README.md">MLEK (Machine Learning Evaluation Kit) for CMSIS workflows</description>
+  <name>cmsis-mlek</name>
+  <description overview="overview/README.md">Machine Learning Evaluation Kit (MLEK) for CMSIS workflows</description>
   <!-- web download link -->
   <url>https://www.keil.com/pack/</url>
   <license>LICENSE</license>

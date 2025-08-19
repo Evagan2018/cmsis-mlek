@@ -20,6 +20,13 @@ solution:
 
   compiler: AC6
 
+  misc:
+    - for-compiler: AC6
+      C-CPP:
+        - -gdwarf-5
+      ASM:
+        - -gdwarf-5
+
   packs:
     - pack: ARM::V2M_MPS3_SSE_300_BSP@^1.5.0
     - pack: ARM::V2M_MPS3_SSE_310_BSP@^1.4.0

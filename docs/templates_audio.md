@@ -1,11 +1,9 @@
-# MLEK Reference Applications - Audio
+# MLEK - Audio Applications
 
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD036 -->
 
-## Audio Processing Reference Applications
-
-These reference applications focus on real-time audio processing:
+This chapter describes the MLEK reference applications for real-time audio processing:
 
 - **Keyword Spotting (KWS)**: Demonstrates wake word detection and voice command recognition
 - **Audio User Algorithm Template**: Provides a foundation for custom audio ML processing applications
@@ -25,21 +23,44 @@ found in the [CMSIS-Driver Manual](https://arm-software.github.io/CMSIS_6/latest
 
 ## Keyword Spotting Application
 
-Keyword spotting (KWS) is the process of detecting predefined words or phrases from a continuous audio stream. In the CMSIS-MLEK templates this allows an embedded device to listen for a "wake word" before executing further commands. The audio template provides an end-to-end implementation using TensorFlow Lite Micro and CMSIS-NN for optimized inference on Cortex-M processors.
+Keyword spotting (KWS) reference application detects predefined words or phrases from a continuous audio stream. An embedded device can listen to a list of "wake words" and use it to execute commands. This implementation uses TensorFlow Lite Micro and CMSIS-NN for optimized inference on Cortex-M processors or Ethos-U processors.
 
-### How KWS Works
+How KWS works:
+
 - Incoming audio is captured from a microphone or played back from a test sample.
-- The audio stream is converted into Mel-frequency cepstral coefficients (MFCC) features.
-- A neural network classifies the MFCC features to determine which keyword, if any, was spoken.
-- Detection results are reported via UART or LED indicators.
+- The audio stream is preprocessed and converted into Mel-frequency cepstral coefficients (MFCC) features.
+- A MicroNet keyword spotting model classifies the MFCC features to determine which keyword, if any, was spoken.
+- Detection results are reported via printf messages.
 
-The template can detect up to twelve keywords. A sample audio file containing the word "down" is provided for testing.
+### Audio Stream Preprocessing
+
+The MicroNet keyword spotting model expects audio data to be preprocessed before performing an inference. This section is an overview of the feature extraction process used. First, the audio data is normalized to the range (-1, 1).
+
+Mel-Frequency Cepstral Coefficients (MFCCs) are a common feature that is extracted from audio data and can
+be used as input for machine learning tasks such as keyword spotting and speech recognition. For implementation
+details, please refer `Mfcc.cc` and `Mfcc.hpp`. These files are part of the software component `ML Eval Kit:Common:API`.
+
+Next, a window of 640 audio samples (40ms) is taken from the audio input. From these 640 samples, we calculate 10
+MFCC features. The whole window is shifted to the right by 320 audio samples (20ms) and 10 new MFCC features are calculated. This process of shifting and calculating is repeated. For 1 second audio input, 49 windows that each have 10 MFCC features are calculated. These extracted features are quantized and an inference is performed.
+
+![KWS Preprocessing](images/KWS_preprocessing.png)
+
+### MicroMet ML Model
+
+The KWS application uses the [MicroNet Medium INT8](https://github.com/Arm-Examples/ML-zoo/tree/master/models/keyword_spotting/micronet_medium/tflite_int8) model that is trained for twelve keywords (see file `src/Labels.cpp`).
+
+ToDo:
+  - how to get scripts?
+  - how to convert models?
+
+A sample audio file containing the word "down" is provided for testing.
+
+The picture below shows serial output from a hardware target, while the application detects the keyword "yes" on a microphone stream.
 
 ![KWS_Console_Print](images/kws_print.png)
-*This capture shows serial output from a hardware target, while the application detects the keyword "yes" on a microphone stream.*
-
 
 ### Build Types
+
 The KWS example defines four build types that control debug information and the audio source:
 
 | Build Type | Description |
