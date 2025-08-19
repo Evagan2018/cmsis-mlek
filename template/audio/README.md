@@ -8,7 +8,7 @@ More details about the input for this example can be found [here](https://review
 
 ## Related
 
-- [MLEK Pack](https://www.keil.arm.com/packs/MLEK) available on [keil.arm.com/packs](https://www.keil.arm.com/packs).
+- [MLEK Pack](https://www.keil.arm.com/packs/cmsis-mlek-arm) available on [keil.arm.com/packs](https://www.keil.arm.com/packs).
 - [tensorflow-lite-micro Pack](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) available on [keil.arm.com/packs](https://www.keil.arm.com/packs).
 - [MLEK Examples](https://github.com/Arm-Examples/mlek-examples) a repository with MLEK applications that are configured for evaluation boards and use cases.
 - [ML Developers Guide for Cortex-M Processors and Ethos-U NPU](https://developer.arm.com/documentation/109267).
