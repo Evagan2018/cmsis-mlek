@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: Copyright 2022, 2024 Arm Limited and/or its
+ * SPDX-FileCopyrightText: Copyright 2022, 2025 Arm Limited and/or its
  * affiliates <open-source-office@arm.com>
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -78,12 +78,15 @@
   /* Frame type */
 #define CAMERA_FRAME_TYPE_RAW8    0U
 #define CAMERA_FRAME_TYPE_RGB565  1U
+#define CAMERA_FRAME_TYPE_RGB888  2U
 
 /* Define input image bit depth */
 #if (CAMERA_FRAME_TYPE == CAMERA_FRAME_TYPE_RAW8)
 #define CAMERA_FRAME_COLOR_BYTES 1
 #elif (CAMERA_FRAME_TYPE == CAMERA_FRAME_TYPE_RGB565)
 #define CAMERA_FRAME_COLOR_BYTES 2
+#elif (CAMERA_FRAME_TYPE == CAMERA_FRAME_TYPE_RGB888)
+#define CAMERA_FRAME_COLOR_BYTES 3
 #else
 #error "Camera frame type not supported, check CAMERA_FRAME_TYPE definition."
 #endif

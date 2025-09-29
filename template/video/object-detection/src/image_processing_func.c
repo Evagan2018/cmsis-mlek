@@ -480,3 +480,35 @@ __WEAK void crop_rgb565_to_rgb888(const uint8_t *src,
     }
   }
 }
+
+__WEAK void crop_rgb888_to_rgb888(const uint8_t *src,
+                                  int src_width,
+                                  int src_height,
+                                  uint8_t *dst,
+                                  int crop_x,
+                                  int crop_y,
+                                  int crop_width,
+                                  int crop_height)
+{
+  const int bpp = 3; // RGB888 = 3 bytes per pixel
+
+  for (int y = 0; y < crop_height; ++y) {
+    int src_y = crop_y + y;
+    if (src_y >= src_height) break; // Prevent out-of-bounds
+
+    const uint8_t *src_row = src + (src_y * src_width + crop_x) * bpp;
+    uint8_t *dst_row = dst + (y * crop_width) * bpp;
+
+    for (int x = 0; x < crop_width; ++x) {
+      int src_x = x;
+      if ((crop_x + src_x) >= src_width) break;
+
+      const uint8_t *src_pixel = src_row + src_x * bpp;
+      uint8_t *dst_pixel = dst_row + x * bpp;
+
+      dst_pixel[0] = src_pixel[0]; // R
+      dst_pixel[1] = src_pixel[1]; // G
+      dst_pixel[2] = src_pixel[2]; // B
+    }
+  }
+}

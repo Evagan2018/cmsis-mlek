@@ -40,7 +40,7 @@
 #define CAMERA_FRAME_HEIGHT         720
 #endif
 
-//  <o>Frame Type <0=>RAW8 <1=>RGB565
+//  <o>Frame Type <0=>RAW8 <1=>RGB565 <2=>RGB888
 //  <i> Define whether camera frame is raw or RGB.
 //  <i> Default: 0
 #ifndef CAMERA_FRAME_TYPE
