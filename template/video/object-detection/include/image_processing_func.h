@@ -195,6 +195,30 @@ void crop_rgb565_to_rgb888(const uint8_t *src,
                            int crop_y,
                            int crop_width,
                            int crop_height);
+
+/**
+ * @brief Crop a region from an RGB888 image.
+ *
+ * The function copies a cropped rectangle from a source RGB888 image and writes
+ * it to a destination buffer in RGB888 format.
+ *
+ * @param src           Pointer to the input RGB888 image buffer.
+ * @param src_width     Width of the source image in pixels.
+ * @param src_height    Height of the source image in pixels.
+ * @param dst           Pointer to the output RGB888 buffer.
+ * @param crop_x        X coordinate of the top-left corner of the crop region.
+ * @param crop_y        Y coordinate of the top-left corner of the crop region.
+ * @param crop_width    Width of the crop region in pixels.
+ * @param crop_height   Height of the crop region in pixels.
+ */
+void crop_rgb888_to_rgb888(const uint8_t *src,
+                           int src_width,
+                           int src_height,
+                           uint8_t *dst,
+                           int crop_x,
+                           int crop_y,
+                           int crop_width,
+                           int crop_height);
 #ifdef __cplusplus
 }
 #endif

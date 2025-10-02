@@ -263,12 +263,15 @@ static void DrawBox(uint8_t *imageData, const uint32_t x0, const uint32_t y0, co
     - If the camera frame is square and matches the RGB image size:
       - crop and debayer the RAW8 camera frame
       - convert RGB565 camera frame to RGB888
+      - copy RGB888 camera frame to RGB image buffer.
     - If the camera frame is square and larger than the RGB image size:
       - crop and debayer the RAW8 camera frame
       - resize RGB565 camera frame to fit into RGB image buffer.
+      - resize RGB888 camera frame to fit into RGB image buffer.
     - If the camera frame is not square:
       - crop and debayer the RAW8 camera frame
-      - crops RGB565 camera frame to fit into RGB image buffer.
+      - crop RGB565 camera frame to fit into RGB image buffer.
+      - crop RGB888 camera frame to fit into RGB image buffer.
 */
 static void convert_frame_to_rgb(uint8_t *inFrame) {
     #if (CAMERA_FRAME_WIDTH == CAMERA_FRAME_HEIGHT)
@@ -285,9 +288,12 @@ static void convert_frame_to_rgb(uint8_t *inFrame) {
                             RGB_IMAGE_WIDTH,
                             RGB_IMAGE_HEIGHT,
                             CAMERA_FRAME_BAYER);
-        #else
+        #elif (CAMERA_FRAME_TYPE == CAMERA_FRAME_TYPE_RGB565)
             /* For RGB565, convert frame to fit into RGB image buffer (RGB888) */
             convert_rgb565_to_rgb888(inFrame, RGB_Image, CAMERA_FRAME_WIDTH, CAMERA_FRAME_HEIGHT);
+        #elif (CAMERA_FRAME_TYPE == CAMERA_FRAME_TYPE_RGB888)
+            /* For RGB888, just copy the frame */
+            memcpy(RGB_Image, inFrame, CAMERA_FRAME_WIDTH * CAMERA_FRAME_HEIGHT * 3);
         #endif
       #else
         /* Camera frame size is larger than RGB image size */
@@ -302,7 +308,7 @@ static void convert_frame_to_rgb(uint8_t *inFrame) {
                             RGB_IMAGE_WIDTH,
                             RGB_IMAGE_HEIGHT,
                             CAMERA_FRAME_BAYER);
-        #else
+        #elif (CAMERA_FRAME_TYPE == CAMERA_FRAME_TYPE_RGB565)
             /* For RGB565, resize frame to fit into RGB image buffer (RGB888) */
             image_resize(inFrame,
                         CAMERA_FRAME_WIDTH,
@@ -311,6 +317,16 @@ static void convert_frame_to_rgb(uint8_t *inFrame) {
                         RGB_IMAGE_WIDTH,
                         RGB_IMAGE_HEIGHT,
                         IMAGE_FORMAT_RGB565,
+                        IMAGE_FORMAT_RGB888);
+        #elif (CAMERA_FRAME_TYPE == CAMERA_FRAME_TYPE_RGB888)
+            /* For RGB888, resize frame to fit into RGB image buffer (RGB888) */
+            image_resize(inFrame,
+                        CAMERA_FRAME_WIDTH,
+                        CAMERA_FRAME_HEIGHT,
+                        RGB_Image,
+                        RGB_IMAGE_WIDTH,
+                        RGB_IMAGE_HEIGHT,
+                        IMAGE_FORMAT_RGB888,
                         IMAGE_FORMAT_RGB888);
         #endif
       #endif
@@ -329,9 +345,19 @@ static void convert_frame_to_rgb(uint8_t *inFrame) {
                         RGB_IMAGE_WIDTH,
                         RGB_IMAGE_HEIGHT,
                         CAMERA_FRAME_BAYER);
-      #else
+      #elif (CAMERA_FRAME_TYPE == CAMERA_FRAME_TYPE_RGB565)
         /* For RGB565, crop and convert to RGB888 */
         crop_rgb565_to_rgb888(inFrame,
+                            CAMERA_FRAME_WIDTH,
+                            CAMERA_FRAME_HEIGHT,
+                            RGB_Image,
+                            (CAMERA_FRAME_WIDTH - RGB_IMAGE_WIDTH) / 2, /* Center crop */
+                            (CAMERA_FRAME_HEIGHT - RGB_IMAGE_HEIGHT) / 2,
+                            RGB_IMAGE_WIDTH,
+                            RGB_IMAGE_HEIGHT);
+      #elif (CAMERA_FRAME_TYPE == CAMERA_FRAME_TYPE_RGB888)
+        /* For RGB888, just crop */
+        crop_rgb888_to_rgb888(inFrame,
                             CAMERA_FRAME_WIDTH,
                             CAMERA_FRAME_HEIGHT,
                             RGB_Image,
