@@ -18,7 +18,10 @@ solution:
   created-for: cmsis-toolbox@2.10.0
   cdefault:
 
-  compiler: AC6
+  select-compiler:
+    - compiler: AC6
+    - compiler: GCC
+    - compiler: CLANG
 
   misc:
     - for-compiler: AC6
