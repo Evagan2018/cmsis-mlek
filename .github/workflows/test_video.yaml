@@ -89,6 +89,19 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
+      with:
+       sparse-checkout: .ci
+
+    - name: Restore Latest Pack Build from Cache
+      uses: actions/cache/restore@v4
+      with:
+         path: ${{ github.workspace }}/output
+         key: latest-cmsis-mlek-pack
+
+    - name: Extract pack content
+      run: |
+        mkdir -p ./ARM/cmsis-mlek/
+        unzip ${{ github.workspace }}/output/ARM.CMSIS-MLEK.*.pack -d ./ARM/cmsis-mlek/
 
     - name: Install tools
       uses: ARM-software/cmsis-actions/vcpkg@v1
@@ -110,7 +123,7 @@ jobs:
         path: /home/runner/.cache/arm/packs/.Download
 
     - name: AC6-Build-Test 4 context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}}
-      working-directory: ./template/video
+      working-directory: ./ARM/cmsis-mlek/template/video
       run: |
         cbuild mlek_video.csolution.yml --update-rte --packs --no-schema-check \
         --context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}} \
