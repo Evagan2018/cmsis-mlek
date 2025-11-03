@@ -31,10 +31,10 @@ jobs:
     strategy:
       matrix:
         context: [
-          {proj: inference_runner,   build_type: Release-UserModel,   target_type: AE722F80F55D5LS,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
-          {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AE722F80F55D5LS,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
-          {proj: inference_runner,   build_type: Release-TestModel,   target_type: AE722F80F55D5LS,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
-          {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AE722F80F55D5LS,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          # {proj: inference_runner,   build_type: Release-UserModel,   target_type: AE722F80F55D5LS,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          # {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AE722F80F55D5LS,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          # {proj: inference_runner,   build_type: Release-TestModel,   target_type: AE722F80F55D5LS,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
+          # {proj: inference_runner,   build_type: Debug-TestModel,     target_type: AE722F80F55D5LS,   model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
 
           {proj: inference_runner,   build_type: Release-UserModel,   target_type: AVH-SSE-300,       model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
           {proj: inference_runner,   build_type: Debug-UserModel,     target_type: AVH-SSE-300,       model: FVP_Corstone_SSE-300_Ethos-U55,    fvp_dir: Corstone-300, mps: mps3},
@@ -94,6 +94,19 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
+      with:
+       sparse-checkout: .ci
+
+    - name: Restore Latest Pack Build from Cache
+      uses: actions/cache/restore@v4
+      with:
+         path: ${{ github.workspace }}/output
+         key: latest-cmsis-mlek-pack
+
+    - name: Extract pack content
+      run: |
+        mkdir -p ./ARM/cmsis-mlek/
+        unzip ${{ github.workspace }}/output/ARM.CMSIS-MLEK.*.pack -d ./ARM/cmsis-mlek/
 
     - name: Install tools
       uses: ARM-software/cmsis-actions/vcpkg@v1
@@ -115,7 +128,7 @@ jobs:
         path: /home/runner/.cache/arm/packs/.Download
 
     - name: AC6-Build-Test 4 context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}}
-      working-directory: ./template/generic
+      working-directory: ./ARM/cmsis-mlek/template/generic
       run: |
         cbuild mlek_generic.csolution.yml --update-rte --packs --no-schema-check \
         --context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}} \

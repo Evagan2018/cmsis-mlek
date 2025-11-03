@@ -100,7 +100,8 @@ jobs:
 
     - name: Extract pack content
       run: |
-        unzip ./output/ARM.cmsis-mlek.*.pack -d ./ARM/cmsis-mlek/
+        mkdir -p ./ARM/cmsis-mlek/
+        unzip ${{ github.workspace }}/output/ARM.CMSIS-MLEK.*.pack -d ./ARM/cmsis-mlek/
 
     - name: Install tools
       uses: ARM-software/cmsis-actions/vcpkg@v1

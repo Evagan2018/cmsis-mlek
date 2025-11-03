@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package schemaVersion="1.7.40" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.40/schema/PACK.xsd">
   <vendor>ARM</vendor>
-  <name>cmsis-mlek</name>
+  <name>CMSIS-MLEK</name>
   <description overview="overview/README.md">Machine Learning Evaluation Kit (MLEK) for CMSIS workflows</description>
   <!-- web download link -->
   <url>https://www.keil.com/pack/</url>
   <license>LICENSE</license>
 
   <releases>
-    <release version="0.1.0">
+    <release version="0.6.0">
       Initial Release
     </release>
   </releases>
@@ -36,7 +36,7 @@
       </attributes>
     </example>
 
-  <!-- example name="MLEK_Generic" folder="template/generic" doc="README.md">
+    <example name="MLEK_Generic" folder="template/generic" doc="README.md">
       <description>MLEK Generic Inference Runner</description>
       <project>
         <environment name="csolution" load="mlek_generic.csolution.yml"/>
@@ -45,7 +45,7 @@
         <component Cclass="Machine Learning"/>
         <category>Getting Started</category>
       </attributes>
-    </example -->
+    </example>
 
   </examples>
 
