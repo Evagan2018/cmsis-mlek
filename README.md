@@ -26,7 +26,7 @@ This repository contains **Machine Learning Evaluation Kit (MLEK)** pack which p
 
 ## Examples description
 
-The provided applications implement data preprocessing, memory management, and neural network inference pipelines that are optimized for Cortex-M and Ethos-U platforms. The examples are prepared to run with [Keil Studio for VS Code](https://www.keil.arm.com/).
+The provided applications implement data preprocessing, memory management, and neural network inference pipelines that are optimized for Cortex-M and Ethos-U platforms. The examples are prepared to run with [Keil Studio](https://mdk-packs.github.io/vscode-cmsis-solution-docs/index.html).
 
 The CMSIS-MLEK software pack is derived from the [Arm® ML embedded evaluation kit](https://git.gitlab.arm.com/artificial-intelligence/ethos-u/ml-embedded-evaluation-kit) and makes the examples easier to access. It also contains interfaces to physical hardware and simplifies porting to target hardware. It contains the following ML applications and uses currently Neural Network Models currently in [TensorFlow Lite](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) format.
 
