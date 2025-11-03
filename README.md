@@ -65,7 +65,7 @@ Refer to [Overview](./overview/README.md) for more details.
 ## Related
 
 - [CMSIS-MLEK Pack](https://www.keil.arm.com/packs/cmsis-mlek-arm) available on [keil.arm.com/packs](https://www.keil.arm.com/packs).
-- [tensorflow-lite-micro Pack](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) available on [www.keil.arm.com/packs](https://www.keil.arm.com/packs).
+- [tensorflow-lite-micro Pack](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) available on [keil.arm.com/packs](https://www.keil.arm.com/packs).
 - [CMSIS-MLEK Examples](https://github.com/Arm-Examples/cmsis-mlek-examples) a repository with MLEK applications that are configured for evaluation boards and use cases.
 - [ML Developers Guide for Cortex-M Processors and Ethos-U NPU](https://developer.arm.com/documentation/109267).
 - [Arm Virtual Hardware - FVP](https://github.com/arm-software/avh) repository with documentation.
