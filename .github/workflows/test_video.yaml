@@ -123,7 +123,7 @@ jobs:
         path: /home/runner/.cache/arm/packs/.Download
 
     - name: Diagnosis
-        run: |
+      run: |
         tree ${{ github.workspace }}/output -L 2
         echo ----
         tree ./ARM/cmsis-mlek/ -L 2
