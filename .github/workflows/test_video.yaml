@@ -122,6 +122,16 @@ jobs:
         key: cmsis-mlek-download
         path: /home/runner/.cache/arm/packs/.Download
 
+    - name: Diagnosis
+        run: |
+        tree ${{ github.workspace }}/output -L 2
+        echo ----
+        tree ./ARM/cmsis-mlek/ -L 2
+        echo ----
+        tree  /home/runner/.cache/arm/packs/.Download -L 2
+        echo ----
+        tree  /home/runner/.cache/arm/.Download -L 3
+
     - name: AC6-Build-Test 4 context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}}
       working-directory: ./ARM/cmsis-mlek/template/video
       run: |
