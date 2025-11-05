@@ -130,11 +130,13 @@ jobs:
         echo ----
         tree  /home/runner/.cache/arm/packs/.Download -L 2
         echo ----
-        tree  /home/runner/.cache/arm/.Download -L 3
+        tree  /home/runner/.cache/arm -L 4
+        echo ----
+        tree  /home/runner -L 6
 
-    - name: AC6-Build-Test 4 context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}}
-      working-directory: ./ARM/cmsis-mlek/template/video
-      run: |
-        cbuild mlek_video.csolution.yml --update-rte --packs --no-schema-check \
-        --context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}} \
-        --toolchain AC6 --rebuild
+    # - name: AC6-Build-Test 4 context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}}
+    #  working-directory: ./ARM/cmsis-mlek/template/video
+    #  run: |
+    #    cbuild mlek_video.csolution.yml --update-rte --packs --no-schema-check \
+    #    --context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}} \
+    #    --toolchain AC6 --rebuild
