@@ -126,13 +126,13 @@ jobs:
       run: |
         tree ${{ github.workspace }}/output -L 2
         echo ----
-        tree ./ARM/cmsis-mlek/ -L 2
+        tree ./ARM/cmsis-mlek/ -a -L 2
         echo ----
-        tree  /home/runner/.cache/arm/packs/.Download -L 2
+        tree  /home/runner/.cache/arm/packs/.Download -a -L 2
         echo ----
-        tree  /home/runner/.cache/arm -L 4
+        tree  /home/runner/.cache/arm -a -L 4
         echo ----
-        tree  /home/runner -L 6
+        tree  /home/runner -a -L 6
 
     # - name: AC6-Build-Test 4 context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}}
     #  working-directory: ./ARM/cmsis-mlek/template/video
