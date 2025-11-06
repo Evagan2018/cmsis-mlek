@@ -101,7 +101,14 @@ jobs:
     - name: Extract pack content
       run: |
         mkdir -p ./ARM/cmsis-mlek/
+        mkdir -p ./ARM/AVH_FVP/
         unzip ${{ github.workspace }}/output/ARM.CMSIS-MLEK.*.pack -d ./ARM/cmsis-mlek/
+
+    - name: Checkout AVH_FVP repo
+      uses: actions/checkout@v5
+      with:
+        repository: ARM-software/AVH
+        path: ./ARM/AVH_FVP/
 
     - name: Install tools
       uses: ARM-software/cmsis-actions/vcpkg@v1
@@ -125,7 +132,7 @@ jobs:
     - name: Add local packs
       run: |
         cpackget add ./ARM/cmsis-mlek/ARM.CMSIS-MLEK.pdsc
-
+        cpackget add ./ARM/ARM_FVP/ARM.AVH_FVP.pdsc
 
     - name: Diagnosis
       run: |
