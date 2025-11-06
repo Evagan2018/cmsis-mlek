@@ -122,6 +122,11 @@ jobs:
         key: cmsis-mlek-download
         path: /home/runner/.cache/arm/packs/.Download
 
+    - name: Add local packs
+      run: |
+        cpackget add ./ARM/cmsis-mlek/ARM.CMSIS-MLEK.pdsc
+
+
     - name: Diagnosis
       run: |
         tree ${{ github.workspace }}/output -L 2
@@ -133,10 +138,12 @@ jobs:
         tree  /home/runner/.cache/arm -a -L 4
         echo ----
         tree  /home/runner -a -L 6
+        echo ----
+        cpackget list
 
-    # - name: AC6-Build-Test 4 context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}}
-    #  working-directory: ./ARM/cmsis-mlek/template/video
-    #  run: |
-    #    cbuild mlek_video.csolution.yml --update-rte --packs --no-schema-check \
-    #    --context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}} \
-    #    --toolchain AC6 --rebuild
+    - name: AC6-Build-Test 4 context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}}
+      working-directory: ./ARM/cmsis-mlek/template/video
+      run: |
+        cbuild mlek_video.csolution.yml --update-rte --packs --no-schema-check \
+        --context ${{matrix.context.proj}}.${{matrix.context.build_type}}+${{matrix.context.target_type}} \
+        --toolchain AC6 --rebuild
