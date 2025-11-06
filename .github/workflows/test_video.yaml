@@ -136,6 +136,7 @@ jobs:
 
     - name: Diagnosis
       run: |
+        echo ----
         tree ${{ github.workspace }}/output -L 2
         echo ----
         tree ./ARM/cmsis-mlek/ -a -L 2
@@ -143,8 +144,6 @@ jobs:
         tree  /home/runner/.cache/arm/packs/.Download -a -L 2
         echo ----
         tree  /home/runner/.cache/arm -a -L 4
-        echo ----
-        tree  /home/runner -a -L 6
         echo ----
         cpackget list
 
