@@ -132,7 +132,7 @@ jobs:
     - name: Add local packs
       run: |
         cpackget add ./ARM/cmsis-mlek/ARM.CMSIS-MLEK.pdsc
-        cpackget add ./ARM/ARM_FVP/ARM.AVH_FVP.pdsc
+        cpackget add ./ARM/AVH_FVP/ARM.AVH_FVP.pdsc
 
     - name: Diagnosis
       run: |
