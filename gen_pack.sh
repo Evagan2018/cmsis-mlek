@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Version: 3.0
-# Date: 2023-11-06
+# Version: 3.1
+# Date: 2024-04-17
 # This bash script generates a CMSIS Software Pack: CMSIS-MLEK
 #
 
@@ -9,7 +9,7 @@ set -o pipefail
 # Set version of gen pack library
 # For available versions see https://github.com/Open-CMSIS-Pack/gen-pack/tags.
 # Use the tag name without the prefix "v", e.g., 0.7.0
-REQUIRED_GEN_PACK_LIB="0.11.3"
+REQUIRED_GEN_PACK_LIB="0.13.0"
 
 # Set default command line arguments
 DEFAULT_ARGS=(-c "v")
@@ -78,14 +78,6 @@ PACK_CHANGELOG_MODE="full"
 function preprocess() {
   # add custom steps here to be executed
   # before populating the pack build folder
-  pushd ./Documentation/Doxygen/ > /dev/null
-  echo "Changing working directory to $(pwd)"
-
-  echo "Executing ./gen_doc.sh"
-  ./docs/gen_doc.sh
-
-  popd > /dev/null
-  echo "Changing working directory to $(pwd)"
   return 0
 }
 
@@ -106,7 +98,7 @@ function postprocess() {
 
 # Set GEN_PACK_LIB_PATH to use a specific gen-pack library root
 # ... instead of bootstrap based on REQUIRED_GEN_PACK_LIB
-if [[ -f "${GEN_PACK_LIB_PATH}/gen-pack" ]]; then
+if [[ -n "${GEN_PACK_LIB_PATH}" ]] && [[ -f "${GEN_PACK_LIB_PATH}/gen-pack" ]]; then
   . "${GEN_PACK_LIB_PATH}/gen-pack"
 else
   . <(curl -sL "https://raw.githubusercontent.com/Open-CMSIS-Pack/gen-pack/main/bootstrap")
