@@ -1,9 +1,9 @@
 [![License](https://img.shields.io/github/license/arm-examples/cmsis-mlek?label)](https://github.com/ARM-examples/cmsis-mlek/blob/main/LICENSE)
 [![Build documentation](https://img.shields.io/github/actions/workflow/status/Arm-Examples/cmsis-mlek/mkdocs.yml?logo=arm&logoColor=0091bd&label=Build%20documentation)](https://github.com/Arm-Examples/cmsis-mlek/tree/main/.github/workflows/mkdocs.yml)
 [![Build documentation and pack](https://img.shields.io/github/actions/workflow/status/Arm-Examples/cmsis-mlek/pack.yml?logo=arm&logoColor=0091bd&label=Build%20documentation%20and%20pack)](https://github.com/Arm-Examples/cmsis-mlek/tree/main/.github/workflows/pack.yml)
-[![AC6 Audio build and run tests](https://img.shields.io/github/actions/workflow/status/Arm-Examples/cmsis-mlek/test_audio.yml?logo=arm&logoColor=0091bd&label=AC6%20Audio%20build%20and%20run%20tests)](https://github.com/Arm-Examples/cmsis-mlek/tree/main/.github/workflows/test_audio.yml)
-[![AC6 Video build tests](https://img.shields.io/github/actions/workflow/status/Arm-Examples/cmsis-mlek/test_video.yml?logo=arm&logoColor=0091bd&label=AC6%20Video%20build%20tests)](https://github.com/Arm-Examples/cmsis-mlek/tree/main/.github/workflows/test_video.yml)
-[![AC6 Inference build tests](https://img.shields.io/github/actions/workflow/status/Arm-Examples/cmsis-mlek/test_generic.yml?logo=arm&logoColor=0091bd&label=AC6%20Inference%20build%20tests)](https://github.com/Arm-Examples/cmsis-mlek/tree/main/.github/workflows/test_generic.yml)
+[![Audio build and run tests](https://img.shields.io/github/actions/workflow/status/Arm-Examples/cmsis-mlek/test_audio.yml?logo=arm&logoColor=0091bd&label=Audio%20build%20and%20run%20tests)](https://github.com/Arm-Examples/cmsis-mlek/tree/main/.github/workflows/test_audio.yml)
+[![Video build and run tests](https://img.shields.io/github/actions/workflow/status/Arm-Examples/cmsis-mlek/test_video.yml?logo=arm&logoColor=0091bd&label=Video%20build%20and%20run%20tests)](https://github.com/Arm-Examples/cmsis-mlek/tree/main/.github/workflows/test_video.yml)
+[![Inference build test](https://img.shields.io/github/actions/workflow/status/Arm-Examples/cmsis-mlek/test_generic.yml?logo=arm&logoColor=0091bd&label=Inference%20build%20test)](https://github.com/Arm-Examples/cmsis-mlek/tree/main/.github/workflows/test_generic.yml)
 
 # CMSIS-MLEK Software Pack
 
