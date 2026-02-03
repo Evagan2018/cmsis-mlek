@@ -65,9 +65,9 @@ solution:
   target-types:
 
     # Arm Corstone-300 targets
-    - type: AVH-SSE-300
-      board: ARM::V2M-MPS3-SSE-300-FVP
-      device: ARM::SSE-300-MPS3
+    - type: SSE-300-MPS3
+      board: V2M-MPS3-SSE-300-FVP
+      device: SSE-300-MPS3
       variables:
         - Board-Layer: ../board/Corstone-300/Board.clayer.yml
       target-set:
@@ -78,9 +78,9 @@ solution:
             config-file: board/Corstone-300/fvp_config.txt
             args: -C mps3_board.v_path=./board/Corstone-300/vsi/python/
 
-    - type: AVH-SSE-300-U55
-      board: ARM::V2M-MPS3-SSE-300-FVP
-      device: ARM::SSE-300-MPS3
+    - type: SSE-300-MPS3-U55
+      board: V2M-MPS3-SSE-300-FVP
+      device: SSE-300-MPS3
       variables:
         - Board-Layer: ../board/Corstone-300/Board-U55.clayer.yml
       target-set:
@@ -91,9 +91,9 @@ solution:
             config-file: board/Corstone-300/fvp_config.txt
             args: -C mps3_board.v_path=./board/Corstone-300/vsi/python/
 
-    - type: AVH-SSE-300-U65
-      board: ARM::V2M-MPS3-SSE-300-FVP
-      device: ARM::SSE-300-MPS3
+    - type: SSE-300-MPS3-U65
+      board: V2M-MPS3-SSE-300-FVP
+      device: SSE-300-MPS3
       variables:
         - Board-Layer: ../board/Corstone-300/Board-U65.clayer.yml
       target-set:
@@ -105,9 +105,9 @@ solution:
             args: -C mps3_board.v_path=./board/Corstone-300/vsi/python/
 
     # Arm Corstone-310 targets
-    - type: AVH-SSE-310
-      board: ARM::V2M-MPS3-SSE-310
-      device: ARM::SSE-310-MPS3_FVP
+    - type: SSE-310-MPS3_FVP
+      board: V2M-MPS3-SSE-310
+      device: SSE-310-MPS3_FVP
       variables:
         - Board-Layer: ../board/Corstone-310/Board.clayer.yml
       target-set:
@@ -118,9 +118,9 @@ solution:
             config-file: ./board/Corstone-310/fvp_config.txt
             args: -C mps3_board.v_path=./board/Corstone-310/vsi/python/
 
-    - type: AVH-SSE-310-U55
-      board: ARM::V2M-MPS3-SSE-310
-      device: ARM::SSE-310-MPS3_FVP
+    - type: SSE-310-MPS3_FVP-U55
+      board: V2M-MPS3-SSE-310
+      device: SSE-310-MPS3_FVP
       variables:
         - Board-Layer: ../board/Corstone-310/Board-U55.clayer.yml
       target-set:
@@ -131,9 +131,9 @@ solution:
             config-file: ./board/Corstone-310/fvp_config.txt
             args: -C mps3_board.v_path=./board/Corstone-310/vsi/python/
 
-    - type: AVH-SSE-310-U65
-      board: ARM::V2M-MPS3-SSE-310
-      device: ARM::SSE-310-MPS3_FVP
+    - type: SSE-310-MPS3_FVP-U65
+      board: V2M-MPS3-SSE-310
+      device: SSE-310-MPS3_FVP
       variables:
         - Board-Layer: ../board/Corstone-310/Board-U65.clayer.yml
       target-set:
@@ -145,9 +145,9 @@ solution:
             args: -C mps3_board.v_path=./board/Corstone-310/vsi/python/
 
     # Arm Corstone-315 targets
-    - type: AVH-SSE-315
-      board: ARM::SSE-315
-      device: ARM::SSE-315-FVP
+    - type: SSE-315-FVP
+      board: SSE-315
+      device: SSE-315-FVP
       variables:
         - Board-Layer: ../board/Corstone-315/Board.clayer.yml
       target-set:
@@ -158,9 +158,9 @@ solution:
             config-file: ./board/Corstone-315/fvp_config.txt
             args: -C mps4_board.v_path=./board/Corstone-315/vsi/python/
 
-    - type: AVH-SSE-315-U65
-      board: ARM::SSE-315
-      device: ARM::SSE-315-FVP
+    - type: SSE-315-FVP-U65
+      board: SSE-315
+      device: SSE-315-FVP
       variables:
         - Board-Layer: ../board/Corstone-315/Board-U65.clayer.yml
       target-set:
@@ -172,9 +172,9 @@ solution:
             args: -C mps4_board.v_path=./board/Corstone-315/vsi/python/
 
     # Arm Corstone-320 targets
-    - type: AVH-SSE-320
-      board: ARM::SSE-320
-      device: ARM::SSE-320-FVP
+    - type: SSE-320-FVP
+      board: SSE-320
+      device: SSE-320-FVP
       variables:
         - Board-Layer: ../board/Corstone-320/Board.clayer.yml
       target-set:
@@ -185,9 +185,9 @@ solution:
             config-file: ./board/Corstone-320/fvp_config.txt
             args: -C mps4_board.v_path=./board/Corstone-320/vsi/python/
 
-    - type: AVH-SSE-320-U85
-      board: ARM::SSE-320
-      device: ARM::SSE-320-FVP
+    - type: SSE-320-FVP-U85
+      board: SSE-320
+      device: SSE-320-FVP
       variables:
         - Board-Layer: ../board/Corstone-320/Board-U85.clayer.yml
       target-set:
