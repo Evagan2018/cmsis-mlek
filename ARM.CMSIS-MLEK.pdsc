@@ -6,6 +6,7 @@
   <!-- web download link -->
   <url>https://www.keil.com/pack/</url>
   <license>LICENSE</license>
+  <repository type="git">https://github.com/Arm-Examples/cmsis-mlek.git</repository>
 
   <releases>
     <release version="1.0.0-dev">
