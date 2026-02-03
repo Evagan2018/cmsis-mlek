@@ -77,6 +77,8 @@ solution:
             model: FVP_Corstone_SSE-300_Ethos-U55
             config-file: board/Corstone-300/fvp_config.txt
             args: -C mps3_board.v_path=./board/Corstone-300/vsi/python/
+          images:
+            - project-context: kws.Debug-Data_Array
 
     - type: SSE-300-MPS3-U55
       board: V2M-MPS3-SSE-300-FVP
@@ -90,6 +92,8 @@ solution:
             model: FVP_Corstone_SSE-300_Ethos-U55
             config-file: board/Corstone-300/fvp_config.txt
             args: -C mps3_board.v_path=./board/Corstone-300/vsi/python/
+          images:
+            - project-context: kws.Debug-Data_Array
 
     - type: SSE-300-MPS3-U65
       board: V2M-MPS3-SSE-300-FVP
@@ -103,6 +107,8 @@ solution:
             model: FVP_Corstone_SSE-300_Ethos-U65
             config-file: ./board/Corstone-300/fvp_config.txt
             args: -C mps3_board.v_path=./board/Corstone-300/vsi/python/
+          images:
+            - project-context: kws.Debug-Data_Array
 
     # Arm Corstone-310 targets
     - type: SSE-310-MPS3_FVP
@@ -117,6 +123,8 @@ solution:
             model: FVP_Corstone_SSE-310
             config-file: ./board/Corstone-310/fvp_config.txt
             args: -C mps3_board.v_path=./board/Corstone-310/vsi/python/
+          images:
+            - project-context: kws.Debug-Data_Array
 
     - type: SSE-310-MPS3_FVP-U55
       board: V2M-MPS3-SSE-310
@@ -130,6 +138,8 @@ solution:
             model: FVP_Corstone_SSE-310
             config-file: ./board/Corstone-310/fvp_config.txt
             args: -C mps3_board.v_path=./board/Corstone-310/vsi/python/
+          images:
+            - project-context: kws.Debug-Data_Array
 
     - type: SSE-310-MPS3_FVP-U65
       board: V2M-MPS3-SSE-310
@@ -143,6 +153,8 @@ solution:
             model: FVP_Corstone_SSE-310_Ethos-U65
             config-file: ./board/Corstone-310/fvp_config.txt
             args: -C mps3_board.v_path=./board/Corstone-310/vsi/python/
+          images:
+            - project-context: kws.Debug-Data_Array
 
     # Arm Corstone-315 targets
     - type: SSE-315-FVP
@@ -157,6 +169,8 @@ solution:
             model: FVP_Corstone_SSE-315
             config-file: ./board/Corstone-315/fvp_config.txt
             args: -C mps4_board.v_path=./board/Corstone-315/vsi/python/
+          images:
+            - project-context: kws.Debug-Data_Array
 
     - type: SSE-315-FVP-U65
       board: SSE-315
@@ -170,6 +184,8 @@ solution:
             model: FVP_Corstone_SSE-315
             config-file: ./board/Corstone-315/fvp_config.txt
             args: -C mps4_board.v_path=./board/Corstone-315/vsi/python/
+          images:
+            - project-context: kws.Debug-Data_Array
 
     # Arm Corstone-320 targets
     - type: SSE-320-FVP
@@ -184,6 +200,8 @@ solution:
             model: FVP_Corstone_SSE-320
             config-file: ./board/Corstone-320/fvp_config.txt
             args: -C mps4_board.v_path=./board/Corstone-320/vsi/python/
+          images:
+            - project-context: kws.Debug-Data_Array
 
     - type: SSE-320-FVP-U85
       board: SSE-320
@@ -197,6 +215,8 @@ solution:
             model: FVP_Corstone_SSE-320
             config-file: ./board/Corstone-320/fvp_config.txt
             args: -C mps4_board.v_path=./board/Corstone-320/vsi/python/
+          images:
+            - project-context: kws.Debug-Data_Array
 
   projects:
     # Keyword Spotting (KWS) use case
