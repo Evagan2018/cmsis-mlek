@@ -61,7 +61,6 @@ project:
 
   layers:
     - layer: $SolutionDir()$/ML/ml_layer.clayer.yml
-      type: ML
 
     - layer: $Board-Layer$
       type: Board
