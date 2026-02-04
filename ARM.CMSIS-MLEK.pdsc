@@ -48,6 +48,96 @@
       </attributes>
     </example>
 
+    <example name="MLEK_Audio_FVP" folder="template/audio" doc="README.md">
+      <description>MLEK Keyword Spotting and Audio User Algorithm Template</description>
+      <board vendor="ARM" name="V2M-MPS3-SSE-300-FVP"/>
+      <project>
+        <environment name="csolution" load="mlek_audio.csolution.yml"/>
+      </project>
+      <attributes>
+        <component Cclass="Machine Learning"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="MLEK_Audio_FVP" folder="template/audio" doc="README.md">
+      <description>MLEK Keyword Spotting and Audio User Algorithm Template</description>
+      <board vendor="ARM" name="V2M-MPS3-SSE-310"/>
+      <project>
+        <environment name="csolution" load="mlek_audio.csolution.yml"/>
+      </project>
+      <attributes>
+        <component Cclass="Machine Learning"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="MLEK_Audio_FVP" folder="template/audio" doc="README.md">
+      <description>MLEK Keyword Spotting and Audio User Algorithm Template</description>
+      <board vendor="ARM" name="SSE-315"/>
+      <project>
+        <environment name="csolution" load="mlek_audio.csolution.yml"/>
+      </project>
+      <attributes>
+        <component Cclass="Machine Learning"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="MLEK_Audio_FVP" folder="template/audio" doc="README.md">
+      <description>MLEK Keyword Spotting and Audio User Algorithm Template</description>
+      <board vendor="ARM" name="SSE-320"/>
+      <project>
+        <environment name="csolution" load="mlek_audio.csolution.yml"/>
+      </project>
+      <attributes>
+        <component Cclass="Machine Learning"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="MLEK_Video_FVP" folder="template/video" doc="README.md">
+      <description>MLEK Object Detection and Video User Algorithm Template</description>
+      <board vendor="ARM" name="V2M-MPS3-SSE-300-FVP"/>
+      <project>
+        <environment name="csolution" load="mlek_video.csolution.yml"/>
+      </project>
+      <attributes>
+        <component Cclass="Machine Learning"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="MLEK_Video_FVP" folder="template/video" doc="README.md">
+      <description>MLEK Object Detection and Video User Algorithm Template</description>
+      <board vendor="ARM" name="V2M-MPS3-SSE-310"/>
+      <project>
+        <environment name="csolution" load="mlek_video.csolution.yml"/>
+      </project>
+      <attributes>
+        <component Cclass="Machine Learning"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="MLEK_Video_FVP" folder="template/video" doc="README.md">
+      <description>MLEK Object Detection and Video User Algorithm Template</description>
+      <board vendor="ARM" name="SSE-315"/>
+      <project>
+        <environment name="csolution" load="mlek_video.csolution.yml"/>
+      </project>
+      <attributes>
+        <component Cclass="Machine Learning"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="MLEK_Video_FVP" folder="template/video" doc="README.md">
+      <description>MLEK Object Detection and Video User Algorithm Template</description>
+      <board vendor="ARM" name="SSE-320"/>
+      <project>
+        <environment name="csolution" load="mlek_video.csolution.yml"/>
+      </project>
+      <attributes>
+        <component Cclass="Machine Learning"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
   </examples>
 
 </package>
