@@ -48,7 +48,7 @@
       </attributes>
     </example>
 
-    <example name="MLEK_Audio_FVP" folder="template/audio" doc="README.md">
+    <example name="MLEK_Audio" folder="template/audio" doc="README.md">
       <description>MLEK Keyword Spotting and Audio User Algorithm Template</description>
       <board vendor="ARM" name="V2M-MPS3-SSE-300-FVP"/>
       <project>
@@ -59,7 +59,7 @@
         <category>Getting Started</category>
       </attributes>
     </example>
-    <example name="MLEK_Audio_FVP" folder="template/audio" doc="README.md">
+    <example name="MLEK_Audio" folder="template/audio" doc="README.md">
       <description>MLEK Keyword Spotting and Audio User Algorithm Template</description>
       <board vendor="ARM" name="V2M-MPS3-SSE-310"/>
       <project>
@@ -70,7 +70,7 @@
         <category>Getting Started</category>
       </attributes>
     </example>
-    <example name="MLEK_Audio_FVP" folder="template/audio" doc="README.md">
+    <example name="MLEK_Audio" folder="template/audio" doc="README.md">
       <description>MLEK Keyword Spotting and Audio User Algorithm Template</description>
       <board vendor="ARM" name="SSE-315"/>
       <project>
@@ -81,7 +81,7 @@
         <category>Getting Started</category>
       </attributes>
     </example>
-    <example name="MLEK_Audio_FVP" folder="template/audio" doc="README.md">
+    <example name="MLEK_Audio" folder="template/audio" doc="README.md">
       <description>MLEK Keyword Spotting and Audio User Algorithm Template</description>
       <board vendor="ARM" name="SSE-320"/>
       <project>
@@ -93,7 +93,7 @@
       </attributes>
     </example>
 
-    <example name="MLEK_Video_FVP" folder="template/video" doc="README.md">
+    <example name="MLEK_Video" folder="template/video" doc="README.md">
       <description>MLEK Object Detection and Video User Algorithm Template</description>
       <board vendor="ARM" name="V2M-MPS3-SSE-300-FVP"/>
       <project>
@@ -104,7 +104,7 @@
         <category>Getting Started</category>
       </attributes>
     </example>
-    <example name="MLEK_Video_FVP" folder="template/video" doc="README.md">
+    <example name="MLEK_Video" folder="template/video" doc="README.md">
       <description>MLEK Object Detection and Video User Algorithm Template</description>
       <board vendor="ARM" name="V2M-MPS3-SSE-310"/>
       <project>
@@ -115,7 +115,7 @@
         <category>Getting Started</category>
       </attributes>
     </example>
-    <example name="MLEK_Video_FVP" folder="template/video" doc="README.md">
+    <example name="MLEK_Video" folder="template/video" doc="README.md">
       <description>MLEK Object Detection and Video User Algorithm Template</description>
       <board vendor="ARM" name="SSE-315"/>
       <project>
@@ -126,7 +126,7 @@
         <category>Getting Started</category>
       </attributes>
     </example>
-    <example name="MLEK_Video_FVP" folder="template/video" doc="README.md">
+    <example name="MLEK_Video" folder="template/video" doc="README.md">
       <description>MLEK Object Detection and Video User Algorithm Template</description>
       <board vendor="ARM" name="SSE-320"/>
       <project>
