@@ -12,13 +12,13 @@ Key Features:
 
 The CMSIS-MLEK software pack is derived from the [Arm® ML embedded evaluation kit](https://git.gitlab.arm.com/artificial-intelligence/ethos-u/ml-embedded-evaluation-kit) and makes the examples easier to access. It also contains interfaces to physical hardware and simplifies porting to target hardware. It contains the following ML applications and uses currently Neural Network Models currently in [TensorFlow Lite](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) format.
 
-| ML application                                 | Description             |  Neural Network Model |
-|:-----------------------------------------------|:------------------------|:----------------------|
-| [Keyword spotting (KWS)](https://github.com/Arm-Examples/cmsis-mlek/tree/main/template/audio)      | Recognize the presence of a key word in verbal speech | [MicroNet](https://github.com/ARM-software/ML-zoo/tree/9f506fe52b39df545f0e6c5ff9223f671bc5ae00/models/keyword_spotting/micronet_medium/tflite_int8) |
-| [Object detection](https://github.com/Arm-Examples/cmsis-mlek/tree/main/template/video)           | Detects and draws face bounding box in a given image  | [Yolo Fastest](https://github.com/emza-vs/ModelZoo/blob/master/object_detection/yolo-fastest_192_face_v4.tflite) |
-| [Generic inference runner](https://github.com/Arm-Examples/cmsis-mlek/tree/main/template/generic) | Code block allowing you to develop your own use case  | Your custom model |
+| ML application                                 | Description                                           |  Neural Network Model |
+|:-----------------------------------------------|:------------------------------------------------------|:----------------------|
+| [MLEK_Audio](./MLEK_Audio.md)                  | Recognize the presence of a key word in verbal speech | [MicroNet](https://github.com/ARM-software/ML-zoo/tree/9f506fe52b39df545f0e6c5ff9223f671bc5ae00/models/keyword_spotting/micronet_medium/tflite_int8) |
+| [MLEK_Video](./MLEK_Video.md)                  | Detects and draws face bounding box in a given image  | [Yolo Fastest](https://github.com/emza-vs/ModelZoo/blob/master/object_detection/yolo-fastest_192_face_v4.tflite) |
+| [MLEK_Generic](./MLEK_Generic.md)              | Code block allowing you to develop your own use case  | Your custom model |
 
-Each [ML reference application](https://open-cmsis-pack.github.io/cmsis-toolbox/ReferenceApplications/) is a *csolution project* which supports deployment to physical hardware or Arm Virtual Hardware (AVH-FVP) for simulation.
+Each [ML reference application](https://open-cmsis-pack.github.io/cmsis-toolbox/ReferenceApplications/) is a *csolution project* which supports deployment to physical hardware or FVP Corestone simulation models.
 
 ![MLEK Reference Application Architecture](./MLEK-Architecture.png)
 
@@ -42,10 +42,10 @@ The templates support via _target names_ multiple [Arm Cortex-M IP Subsystems](h
 
 | Target Name  | IP Subsystem | Description  |
 |:-------------|:-------------|:-------------|
-| AVH-SSE-300  | [Corstone-300](https://developer.arm.com/Processors/Corstone-300) | Cortex-M55 optional with Ethos-U55 or Ethos-U65 |
-| AVH-SSE-310  | [Corstone-310](https://developer.arm.com/Processors/Corstone-310) | Cortex-M85 optional with Ethos-U55 |
-| AVH-SSE-315  | [Corstone-315](https://developer.arm.com/Processors/Corstone-315) | Cortex-M85 optional with Ethos-U65 |
-| AVH-SSE-320  | [Corstone-320](https://developer.arm.com/Processors/Corstone-320) | Cortex-M85 optional with Ethos-U85 |
+| SSE-300      | [Corstone-300](https://developer.arm.com/Processors/Corstone-300) | Cortex-M55 optional with Ethos-U55 or Ethos-U65 |
+| SSE-310      | [Corstone-310](https://developer.arm.com/Processors/Corstone-310) | Cortex-M85 optional with Ethos-U55 |
+| SSE-315      | [Corstone-315](https://developer.arm.com/Processors/Corstone-315) | Cortex-M85 optional with Ethos-U65 |
+| SSE-320      | [Corstone-320](https://developer.arm.com/Processors/Corstone-320) | Cortex-M85 optional with Ethos-U85 |
 
 Adding a postfix to the _target name_ in the `*.csolution.yml` project file configures the neural network inference pipeline for Ethos-U. Without this prefix only the Cortex-M system is used as shown in the diagram below. Such a postfix can also be used for _target names_ that deploy to physical hardware.
 
