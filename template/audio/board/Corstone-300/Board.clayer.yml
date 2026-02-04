@@ -64,6 +64,10 @@ layer:
         - file: ./vstream/vstream_audio_out.c
         - file: ./vstream/vstream_video_in.c
         - file: ./vstream/vstream_video_out.c
+        - file: ./RTE/CMSIS_Driver/vstream_audio_in_config.h
+        - file: ./RTE/CMSIS_Driver/vstream_audio_out_config.h
+        - file: ./RTE/CMSIS_Driver/vstream_video_in_config.h
+        - file: ./RTE/CMSIS_Driver/vstream_video_out_config.h
 
   linker:
     - regions: ./regions_SSE-300.h
