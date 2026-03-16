@@ -101,6 +101,11 @@ jobs:
     - name: Activate Arm tool license
       uses: ARM-software/cmsis-actions/armlm@v1
 
+    - name: Set up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.13'
+
     - name: Initialize CMSIS pack root folder
       run: |
         cpackget init https://www.keil.com/pack/index.pidx
@@ -136,7 +141,7 @@ jobs:
         test "$(grep "FAIL: " stdout_${{matrix.context.build_type}}_${{matrix.context.target_type}}.log | wc -l)" -eq 0
 
     - name: Upload FVP UART output log
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: stdout_${{matrix.context.build_type}}_${{matrix.context.target_type}}.log
         path: ./template/audio/stdout_${{matrix.context.build_type}}_${{matrix.context.target_type}}.log
